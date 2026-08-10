@@ -1,5 +1,18 @@
 import React from 'react';
-import { X, CheckCircle2, ArrowRight, Sparkles, Shield, Star, PhoneCall, Globe, Calendar } from 'lucide-react';
+import {
+  X,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  Shield,
+  Star,
+  PhoneCall,
+  Globe,
+  Calendar,
+  CreditCard,
+  ExternalLink,
+  Tag,
+} from 'lucide-react';
 import { Product } from '../../types';
 
 interface ProductDetailModalProps {
@@ -20,6 +33,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   if (!isOpen || !product) return null;
 
   const isFreeWebsite = product.id === 'free-website';
+  const isPhoneOrChat = product.id === 'ai-receptionist' || product.id === 'ai-chatbot';
 
   return (
     <div
@@ -44,7 +58,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         <div className="mb-6">
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#00E599]/15 text-[#00E599] text-xs font-bold uppercase tracking-wider mb-2">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Product Deep-Dive</span>
+            <span>Product Deep-Dive & Pricing</span>
           </div>
           <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white">
             {product.name}
@@ -52,8 +66,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           <div className="text-xs font-bold text-[#00E599] uppercase tracking-wide mt-1">
             {product.tagline}
           </div>
-          <div className="text-sm font-semibold text-slate-300 mt-2">
-            Pricing Guide: <span className="text-[#00E599] font-bold">{product.startingPrice}</span>
+          <div className="text-sm font-semibold text-slate-300 mt-2 flex items-center gap-2">
+            <span>Pricing Guide:</span>
+            <span className="text-[#00E599] font-bold bg-[#00E599]/10 px-2.5 py-0.5 rounded-lg border border-[#00E599]/30">
+              {product.startingPrice}
+            </span>
           </div>
         </div>
 
@@ -62,18 +79,36 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           {product.description}
         </div>
 
-        {/* Free Website Specific Breakdown Box */}
+        {/* Combo Offer Callout for Phone Assistant & Website Chatbot */}
+        {isPhoneOrChat && product.comboOffer && (
+          <div className="p-4 rounded-2xl bg-gradient-to-r from-[#00E599]/15 to-emerald-500/10 border border-[#00E599]/40 text-xs text-slate-200 mb-6 space-y-2">
+            <div className="flex items-center justify-between font-bold text-white">
+              <span className="text-[#00E599] flex items-center gap-1.5 uppercase tracking-wider text-[11px]">
+                <Sparkles className="w-3.5 h-3.5" />
+                {product.comboOffer.title}
+              </span>
+              <span className="bg-[#00E599]/20 px-2 py-0.5 rounded text-[11px] text-[#00E599] font-extrabold">
+                {product.comboOffer.price}
+              </span>
+            </div>
+            <p className="text-slate-300 text-xs leading-relaxed">
+              {product.comboOffer.description}
+            </p>
+          </div>
+        )}
+
+        {/* Free Website / Upgrade Specific Breakdown Box */}
         {isFreeWebsite && (
           <div className="p-4 rounded-2xl bg-gradient-to-r from-[#00E599]/10 to-transparent border border-[#00E599]/30 text-xs text-slate-200 mb-6 space-y-2">
             <div className="flex items-center justify-between font-bold text-white">
-              <span className="text-[#00E599] uppercase tracking-wider text-[11px]">Pricing & Architecture Breakdown:</span>
-              <span className="bg-[#00E599]/20 px-2 py-0.5 rounded text-[11px] text-[#00E599]">$0 Build • $97/mo Cloud Care</span>
+              <span className="text-[#00E599] uppercase tracking-wider text-[11px]">Pricing & Options:</span>
+              <span className="bg-[#00E599]/20 px-2 py-0.5 rounded text-[11px] text-[#00E599]">Starts at $400 ($100/mo) or $0 Build</span>
             </div>
             <p className="text-slate-300 text-[11px] leading-relaxed">
-              <strong>Foundational Starter Build:</strong> Includes manual layout setup, click-to-call buttons, mobile speed under 1s, and local Google schema. Cloud hosting, SSL security, and backups are $97/month.
+              <strong>Website Upgrade ($400 + $100/mo):</strong> Complete custom layout, speed optimization, local SEO schema, and dedicated hosting & care.
             </p>
             <p className="text-slate-400 text-[11px] leading-relaxed">
-              <strong>Higher-End Custom Upgrades:</strong> If you need custom multi-page funnels, bespoke animations, or complex customer portals in the future, our High-End Bespoke tier is available whenever you are ready to upgrade.
+              <strong>$0 Build Starter Offer:</strong> For qualifying local businesses needing an instant clean starter site with transparent $97/mo hosting & security.
             </p>
           </div>
         )}
@@ -114,37 +149,54 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         </div>
 
         {/* Modal Actions */}
-        <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="text-xs text-slate-400 text-center sm:text-left">
-            Custom setup & dispatch integration included
-          </div>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
-            {isFreeWebsite ? (
-              <button
-                onClick={() => {
-                  onClose();
-                  onOpenFreeWebsite();
-                }}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
-              >
-                <span>Claim Free Build ($0)</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            ) : (
+        <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="text-xs text-slate-400 text-center sm:text-left">
+              Instant Stripe checkout • Concierge prompt setup included
+            </div>
+            <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+              {product.checkoutUrl && (
+                <a
+                  id="modal-checkout-btn"
+                  href={product.checkoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading group"
+                >
+                  <CreditCard className="w-4 h-4 shrink-0" />
+                  <span>Order Now • {product.startingPrice}</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform shrink-0" />
+                </a>
+              )}
+
+              {isFreeWebsite && (
+                <button
+                  onClick={() => {
+                    onClose();
+                    onOpenFreeWebsite();
+                  }}
+                  className="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer font-heading"
+                >
+                  <span>Claim $0 Starter Build</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              )}
+
               <button
                 onClick={() => {
                   onClose();
                   onOpenBookCallWithProduct(product.name);
                 }}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
+                className="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book 15-Min Strategy Call</span>
+                <span>Book Strategy Call</span>
               </button>
-            )}
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 };
+

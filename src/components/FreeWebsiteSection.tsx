@@ -134,14 +134,24 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                   </ul>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/10 space-y-1.5">
-                  <div className="font-bold text-white flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Future High-End Upgrade:</span>
+                <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/10 space-y-1.5 flex flex-col justify-between">
+                  <div>
+                    <div className="font-bold text-white flex items-center gap-1.5">
+                      <Zap className="w-3.5 h-3.5 text-amber-400" />
+                      <span>Website Upgrade ($400 + $100/mo):</span>
+                    </div>
+                    <p className="text-slate-300 text-[11px] leading-relaxed mt-1">
+                      For businesses wanting a full custom design overhaul, custom branding, and managed hosting: Starts at $400 setup and $100/month.
+                    </p>
                   </div>
-                  <p className="text-slate-400 text-[11px] leading-relaxed">
-                    When you are ready for a bespoke, multi-tier custom web application with deep multi-page funnels, custom client portals, and bespoke creative production, we offer high-end custom upgrades anytime.
-                  </p>
+                  <a
+                    href="https://buy.stripe.com/28E7sM5Xjezz2gtcJC3VC07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] font-bold text-[#00E599] hover:text-[#34D399] pt-1"
+                  >
+                    <span>Direct Stripe Checkout ($400 + $100/mo) →</span>
+                  </a>
                 </div>
               </div>
             </div>

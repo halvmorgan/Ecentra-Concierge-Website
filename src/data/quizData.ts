@@ -183,13 +183,13 @@ const LEAD_VOLUME_TIERS: Record<number, { text: string; missedCallsPerWeek: numb
 };
 
 const PRODUCT_COST_MAP: Record<string, { cost: number; display: string }> = {
-  'free-website': { cost: 97, display: '$0 Build ($97/mo Hosting)' },
-  'ai-receptionist': { cost: 199, display: '~$199/mo' },
-  'ai-chatbot': { cost: 149, display: '~$149/mo' },
-  'review-automator': { cost: 99, display: '~$99/mo' },
-  'appointment-setter': { cost: 149, display: '~$149/mo' },
-  'interactive-funnel': { cost: 199, display: '~$199/mo' },
-  'ai-employee': { cost: 399, display: '~$399/mo' },
+  'free-website': { cost: 100, display: '$400 + $100/mo (or $0 Build Starter)' },
+  'ai-receptionist': { cost: 299, display: '$497 Setup + $299/mo' },
+  'ai-chatbot': { cost: 299, display: '$497 Setup + $299/mo' },
+  'review-automator': { cost: 199, display: 'Starts at $199' },
+  'appointment-setter': { cost: 500, display: 'Starts at $500/mo' },
+  'interactive-funnel': { cost: 1999, display: 'Starts at $1,999' },
+  'ai-employee': { cost: 399, display: '$897 Setup + $399/mo (Combo)' },
 };
 
 export function calculateQuizResults(selectedOptionIndices: number[]): QuizAnalysisResult {

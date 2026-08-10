@@ -7,6 +7,15 @@ export interface Product {
   proofPoint: string;
   proofMetric: string;
   startingPrice: string;
+  checkoutUrl?: string;
+  setupFee?: string;
+  monthlyFee?: string;
+  comboOffer?: {
+    title: string;
+    price: string;
+    description: string;
+    targetProductId?: string;
+  };
   featuredBadge?: string;
   keyFeatures: string[];
   icon: string;

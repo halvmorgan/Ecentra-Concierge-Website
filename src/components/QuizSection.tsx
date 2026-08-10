@@ -14,6 +14,8 @@ import {
   DollarSign,
   AlertCircle,
   HelpCircle,
+  CreditCard,
+  ExternalLink,
 } from 'lucide-react';
 import { QUIZ_QUESTIONS, calculateQuizResults } from '../data/quizData';
 import { QuizAnalysisResult, MissedCallsTier } from '../types';
@@ -563,6 +565,19 @@ export const QuizSection: React.FC<QuizSectionProps> = ({
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3">
+                    {resultData.primary.checkoutUrl && (
+                      <a
+                        id="quiz-result-checkout-btn"
+                        href={resultData.primary.checkoutUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-sm shadow-lg shadow-[#00E599]/20 transition-all flex items-center gap-2 cursor-pointer font-heading group"
+                      >
+                        <CreditCard className="w-4 h-4 shrink-0" />
+                        <span>Order Now ({resultData.primary.startingPrice})</span>
+                        <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform shrink-0" />
+                      </a>
+                    )}
                     <button
                       id="quiz-result-book-primary-btn"
                       onClick={() =>
@@ -570,10 +585,10 @@ export const QuizSection: React.FC<QuizSectionProps> = ({
                           `${resultData.primary.name} (Quiz Diagnosis: ${resultData.industryName}, ~${activeTier?.callsPerWeek || 2} missed calls/wk)`
                         )
                       }
-                      className="px-6 py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-sm shadow-lg shadow-[#00E599]/20 transition-all flex items-center gap-2 cursor-pointer font-heading"
+                      className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/10 transition-all flex items-center gap-2 cursor-pointer"
                     >
                       <Calendar className="w-4 h-4" />
-                      <span>Schedule 15-Min Strategy Call</span>
+                      <span>Schedule Strategy Call</span>
                     </button>
                     {resultData.primary.id === 'free-website' && (
                       <button
