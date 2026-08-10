@@ -400,7 +400,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               Need Help Choosing the Best Fit for Your Trade?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-              Talk directly with Harold Morgan and our implementation team. We'll analyze your current call volume and calculate your exact ROI.
+              Talk directly with our founder and implementation team. We'll analyze your current call volume and calculate your exact ROI.
             </p>
           </div>
 
@@ -416,7 +416,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               onClick={onOpenFreeWebsite}
               className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs sm:text-sm border border-white/15 transition-all cursor-pointer"
             >
-              <span>Claim $0 Website Build</span>
+              <span>Claim $0 AI-Ready Website</span>
             </button>
           </div>
         </div>

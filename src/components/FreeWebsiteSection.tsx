@@ -11,6 +11,8 @@ import {
   Smartphone,
   Search,
   Lock,
+  Bot,
+  Cpu,
 } from 'lucide-react';
 import { FreeWebsiteFormData } from '../types';
 
@@ -80,14 +82,47 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00E599]/10 border border-[#00E599]/30 text-xs font-bold text-[#00E599] mb-3">
             <Globe className="w-3.5 h-3.5" />
-            <span>Zero-Risk Foundational Offer</span>
+            <span>Zero-Risk Foundational Offer • AI Search Ready</span>
           </div>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             Claim Your $0 Foundational Website Build
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-300">
-            We build you a clean, conversion-focused starter website with <strong className="text-white">$0 upfront design fees</strong> and a transparent <strong className="text-[#00E599]">$97/month cloud hosting & maintenance plan</strong>.
+            We build you a clean, speed-optimized starter website with <strong className="text-white">$0 upfront design fees</strong>, transparent <strong className="text-[#00E599]">$97/mo cloud hosting</strong>, and <strong className="text-white">built-in optimization for AI Search Engines</strong> like ChatGPT, Claude, Gemini & Google.
           </p>
+        </div>
+
+        {/* Highlight Banner: AI Search Engine Optimization (GEO) */}
+        <div className="mb-10 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-[#00E599]/15 via-[#0D152F] to-[#15224A] border-2 border-[#00E599]/40 shadow-xl relative overflow-hidden">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E599]/20 text-[#00E599] text-xs font-bold font-heading">
+                <Bot className="w-4 h-4" />
+                <span>Next-Gen AI Search Optimization Included (GEO)</span>
+              </div>
+              <h3 className="font-heading text-xl sm:text-2xl font-extrabold text-white">
+                Optimized to Win Search Traffic from ChatGPT, Claude, Gemini & Perplexity
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                When local customers ask AI assistants <em>"Who is the most reliable plumber near me?"</em> or <em>"Best rated HVAC technician in town"</em>, your website needs structured entity data to be cited and recommended. Every $0 starter site includes rich JSON-LD schema, verified trade citations, and AI-search-readable architecture out of the box.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap md:flex-col gap-2 shrink-0 text-xs">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-slate-200">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00E599]" />
+                <span>ChatGPT & SearchGPT Indexed</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-slate-200">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00E599]" />
+                <span>Google Gemini & AI Overviews</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-slate-200">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00E599]" />
+                <span>Claude & Perplexity Schema</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -126,9 +161,10 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                     <span>Included for $0 ($97/mo host):</span>
                   </div>
                   <ul className="text-slate-300 space-y-1 list-disc list-inside text-[11px] leading-relaxed">
+                    <li><strong>AI Search Optimization:</strong> ChatGPT, Gemini & Claude</li>
                     <li>Clean, high-speed starter layout</li>
-                    <li>Click-to-call phone buttons</li>
-                    <li>Google Maps local SEO schema</li>
+                    <li>Instant click-to-call phone buttons</li>
+                    <li>Google Maps local SEO schema & entity data</li>
                     <li>Mobile responsive & sub-1s load speed</li>
                     <li>Enterprise cloud hosting & SSL</li>
                   </ul>
@@ -141,7 +177,7 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                       <span>Website Upgrade ($400 + $100/mo):</span>
                     </div>
                     <p className="text-slate-300 text-[11px] leading-relaxed mt-1">
-                      For businesses wanting a full custom design overhaul, custom branding, and managed hosting: Starts at $400 setup and $100/month.
+                      For businesses wanting a full custom design overhaul, bespoke trade branding, advanced gallery pages, and managed hosting: Starts at $400 setup and $100/month.
                     </p>
                   </div>
                   <a
@@ -167,7 +203,7 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Your free website includes zero upfront design charges. To keep your site blazing fast, secure, and always live, it is paired with our <strong>$97/month cloud hosting & maintenance plan</strong>—including enterprise Google Cloud servers, SSL encryption, daily automated backups, and ongoing security updates.
+                Your free website includes zero upfront design charges. To keep your site blazing fast, secure, and always live, it is paired with our <strong>$97/month cloud hosting & maintenance plan</strong>—including enterprise Google Cloud servers, SSL encryption, daily automated backups, AI search index updates, and ongoing security patches.
               </p>
             </div>
 
@@ -180,13 +216,13 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                 <span className="w-6 h-6 rounded-full bg-[#00E599]/20 text-[#00E599] font-bold flex items-center justify-center shrink-0">
                   1
                 </span>
-                <span>Submit your business info & primary service goals (60 sec)</span>
+                <span>Submit your business info, services & trade specialties (60 sec)</span>
               </div>
               <div className="flex items-center gap-3 text-xs text-slate-300">
                 <span className="w-6 h-6 rounded-full bg-[#00E599]/20 text-[#00E599] font-bold flex items-center justify-center shrink-0">
                   2
                 </span>
-                <span>Our design team builds your clean, high-speed site (2–3 business days)</span>
+                <span>Our team builds your high-speed site with AI Search schema (2–3 business days)</span>
               </div>
               <div className="flex items-center gap-3 text-xs text-slate-300">
                 <span className="w-6 h-6 rounded-full bg-[#00E599]/20 text-[#00E599] font-bold flex items-center justify-center shrink-0">
@@ -372,9 +408,12 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                   </button>
                 </form>
 
-                <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                <div className="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
                   <span className="flex items-center gap-1">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> $0 Upfront build
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Bot className="w-3.5 h-3.5 text-[#00E599]" /> AI Search Optimized (ChatGPT, Gemini, Claude)
                   </span>
                   <span className="flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5 text-[#00E599]" /> 2–3 day turnaround
@@ -402,7 +441,7 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                     We’ve Received Your $0 Starter Website Request!
                   </h3>
                   <p className="text-slate-300 text-sm mt-2 max-w-md mx-auto">
-                    Our trade design team is setting up the foundational build for{' '}
+                    Our trade design team is setting up the foundational build and AI Search schema (ChatGPT, Gemini, Claude) for{' '}
                     <strong className="text-white">{formData.businessName}</strong> ({formData.industry}).
                   </p>
                 </div>
@@ -418,6 +457,10 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                   <div className="flex justify-between">
                     <span className="text-slate-400">Build Cost:</span>
                     <span className="font-bold text-[#00E599]">$0 Upfront</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">AI Search Readiness:</span>
+                    <span className="font-bold text-[#00E599]">ChatGPT, Claude, Gemini & Schema Included</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">Hosting & Care Plan:</span>

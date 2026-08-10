@@ -162,9 +162,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <div className="w-10 h-10 rounded-xl bg-[#00E599]/10 text-[#00E599] flex items-center justify-center">
                 <Building2 className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-white text-base">$0 Starter Website Model</h3>
+              <h3 className="font-heading font-bold text-white text-base">$0 Starter Website + AI Search</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                We remove the painful $3,000+ agency roadblock by providing local operators a $0 upfront foundational starter website backed by our $97/mo enterprise cloud hosting.
+                We remove the painful $3,000+ agency roadblock with a $0 upfront foundational website—built with rich schema and citations to rank directly in ChatGPT, Claude, Gemini, and Google search.
               </p>
             </div>
 

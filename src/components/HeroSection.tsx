@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Sparkles, ShieldCheck, Zap, PhoneCall, Globe, Star, Clock, Building } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, ShieldCheck, Zap, PhoneCall, Globe, Star, Clock, Building, Bot } from 'lucide-react';
 import { ALL_INDUSTRY_PAGES } from '../data/industryPages';
 
 interface HeroSectionProps {
@@ -87,7 +87,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-[#00E599]/30 text-xs sm:text-sm font-medium text-slate-200 backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-[#00E599] animate-ping" />
             <span className="text-[#00E599] font-bold">Foundational Offer:</span>
-            <span>$0 Website Builds for Local Trades • $97/mo Cloud Hosting</span>
+            <span>$0 Starter Builds • AI Search Engine Optimized (ChatGPT, Gemini, Claude)</span>
           </div>
         </div>
 
@@ -102,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
-              No bloated WordPress themes or DIY builder struggles. We build you a clean, speed-optimized foundational website with <strong className="text-white">$0 upfront design fees</strong> and a transparent <strong className="text-[#00E599]">$97/mo cloud hosting & care package</strong>.
+              No bloated WordPress themes or DIY builder struggles. We build you a clean, speed-optimized foundational website with <strong className="text-white">$0 upfront design fees</strong>, transparent <strong className="text-[#00E599]">$97/mo cloud hosting</strong>, and <strong className="text-white">built-in optimization for AI Search Engines</strong> like ChatGPT, Claude, Gemini & Google.
             </p>
 
             {/* Benefit Checkpoints */}
@@ -112,16 +112,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <span>$0 Upfront Build Fee ($2,500 Design Value)</span>
               </div>
               <div className="flex items-center gap-2.5">
+                <Bot className="w-5 h-5 text-[#00E599] shrink-0" />
+                <span>AI Search Optimized (ChatGPT, Gemini, Claude)</span>
+              </div>
+              <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-[#00E599] shrink-0" />
-                <span>$97/mo Cloud Hosting & SSL Included</span>
+                <span>$97/mo Enterprise Cloud Hosting & SSL</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-[#00E599] shrink-0" />
                 <span>Ready in 2–3 Business Days</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-[#00E599] shrink-0" />
-                <span>Higher-End Custom Upgrades Available Later</span>
               </div>
             </div>
 
@@ -175,7 +175,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
                   <div>
                     <span className="inline-block text-[11px] font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-[#00E599]/20 text-[#00E599] border border-[#00E599]/30 mb-1">
-                      Starter Offer
+                      Starter Offer • AI Search Ready
                     </span>
                     <h3 className="font-heading text-xl font-bold text-white">
                       Claim $0 Starter Site
@@ -282,6 +282,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
                   <span className="flex items-center gap-1">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> $0 Upfront Build
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Bot className="w-3.5 h-3.5 text-[#00E599]" /> AI Search Ready
                   </span>
                   <span className="flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5 text-[#00E599]" /> 2–3 Day Delivery

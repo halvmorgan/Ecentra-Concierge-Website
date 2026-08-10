@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, ArrowRight, ShieldCheck, Clock, Sparkles } from 'lucide-react';
+import { X, CheckCircle2, ArrowRight, ShieldCheck, Clock, Sparkles, Bot } from 'lucide-react';
 import { FreeWebsiteFormData } from '../../types';
 
 interface FreeWebsiteModalProps {
@@ -85,19 +85,23 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
           <div>
             <div className="flex items-center gap-2 text-xs font-bold text-[#00E599] uppercase tracking-wider mb-1">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Foundational Starter Offer</span>
+              <span>Foundational Starter Offer • AI Search Ready</span>
             </div>
             <h3 className="font-heading text-2xl font-bold text-white">
               Claim Your $0 Foundational Website Build
             </h3>
-            <p className="text-xs text-slate-300 mt-1 mb-4">
-              We handcraft a clean, high-speed starter website ($0 build fee) paired with our <strong>$97/month cloud hosting & maintenance plan</strong>. For complex bespoke web apps or multi-page funnels, our High-End Custom tier is available whenever you're ready to scale.
+            <p className="text-xs text-slate-300 mt-1 mb-4 leading-relaxed">
+              We handcraft a clean, speed-optimized starter website ($0 build fee) paired with our <strong>$97/month cloud hosting & maintenance plan</strong>—fully structured and optimized to capture search traffic from <strong>ChatGPT, Claude, Gemini, Perplexity, and Google</strong>.
             </p>
 
             {/* Scope disclosure pill */}
-            <div className="p-3 rounded-xl bg-white/[0.03] border border-[#00E599]/30 mb-5 flex items-center justify-between text-xs">
+            <div className="p-3 rounded-xl bg-white/[0.03] border border-[#00E599]/30 mb-5 flex flex-wrap items-center justify-between gap-2 text-xs">
               <span className="text-slate-300">
-                <strong>Build Fee:</strong> <span className="text-[#00E599] font-bold">$0 Free</span>
+                <strong>Build Fee:</strong> <span className="text-[#00E599] font-bold">$0 Upfront</span>
+              </span>
+              <span className="text-[#00E599] font-semibold flex items-center gap-1">
+                <Bot className="w-3.5 h-3.5" />
+                <span>AI Search Schema Included</span>
               </span>
               <span className="text-slate-300">
                 <strong>Cloud Hosting & Care:</strong> <span className="text-white font-bold">$97/mo</span>
@@ -232,15 +236,18 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
               </button>
             </form>
 
-            <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+            <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
               <span className="flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> $0 Upfront Build
+              </span>
+              <span className="flex items-center gap-1">
+                <Bot className="w-3.5 h-3.5 text-[#00E599]" /> AI Search Indexed
               </span>
               <span className="flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5 text-[#00E599]" /> 2–3 Days
               </span>
               <span className="flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-[#00E599]" /> $97/mo Hosting & Care
+                <Sparkles className="w-3.5 h-3.5 text-[#00E599]" /> $97/mo Care
               </span>
             </div>
           </div>
@@ -254,7 +261,7 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
               Application Confirmed!
             </h3>
             <p className="text-xs text-slate-300 max-w-sm mx-auto">
-              Your $0 starter build is in the queue for <strong className="text-white">{formData.businessName}</strong>.
+              Your $0 starter build with AI Search schema is in the queue for <strong className="text-white">{formData.businessName}</strong>.
             </p>
 
             <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-left text-xs space-y-1.5 max-w-xs mx-auto">
@@ -265,6 +272,10 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
               <div className="flex justify-between">
                 <span className="text-slate-400">Build Fee:</span>
                 <span className="font-bold text-[#00E599]">$0 Upfront</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-400">AI Search Ready:</span>
+                <span className="font-bold text-[#00E599]">ChatGPT, Claude & Gemini</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">Hosting & Care:</span>

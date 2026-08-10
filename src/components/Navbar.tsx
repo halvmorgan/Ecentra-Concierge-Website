@@ -74,8 +74,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="font-heading text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
               Ecentra <span className="text-[#00E599]">Concierge</span>
             </div>
-            <div className="text-[11px] text-slate-400 font-medium tracking-wide uppercase">
-              AI Growth for Local Service
+            <div className="text-[11px] text-slate-400 font-medium tracking-wide">
+              The Service Business AI Toolbox
             </div>
           </div>
         </button>
