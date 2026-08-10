@@ -10,22 +10,22 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       {
         label: "HVAC & Climate Control",
         description: "High-ticket system replacements & emergency repair calls",
-        productScores: { 'ai-receptionist': 3, 'free-website': 2, 'ai-employee': 3, 'appointment-setter': 2 },
+        productScores: { 'ai-receptionist': 3, 'ai-employee': 3, 'appointment-setter': 2, 'ai-chatbot': 2 },
       },
       {
         label: "Plumbing & Drain Cleaning",
         description: "Urgent leaks, water heaters, and technician dispatch",
-        productScores: { 'ai-receptionist': 3, 'review-automator': 2, 'ai-employee': 2, 'free-website': 2 },
+        productScores: { 'ai-receptionist': 3, 'review-automator': 2, 'ai-employee': 3, 'appointment-setter': 2 },
       },
       {
         label: "Chiropractor or Medical / Wellness",
         description: "New patient consultations, adjustments, recurring wellness",
-        productScores: { 'appointment-setter': 3, 'ai-chatbot': 2, 'review-automator': 3, 'ai-employee': 2 },
+        productScores: { 'appointment-setter': 3, 'ai-chatbot': 3, 'review-automator': 3, 'ai-employee': 2 },
       },
       {
         label: "Tattoo Studio or Independent Artist",
         description: "Flash bookings, custom inquiries, reference collection",
-        productScores: { 'interactive-funnel': 3, 'ai-chatbot': 3, 'appointment-setter': 2, 'free-website': 2 },
+        productScores: { 'interactive-funnel': 4, 'ai-chatbot': 3, 'appointment-setter': 2 },
       },
       {
         label: "Med Spa & Aesthetics Clinic",
@@ -35,17 +35,17 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       {
         label: "Roofing, Construction & Remodeling",
         description: "Heavy ticket estimates, storm damage, roofing quotes",
-        productScores: { 'interactive-funnel': 3, 'ai-receptionist': 3, 'review-automator': 2, 'ai-employee': 2 },
+        productScores: { 'interactive-funnel': 3, 'ai-receptionist': 3, 'review-automator': 2, 'ai-employee': 3 },
       },
       {
         label: "Auto Detailing, Tinting & Marine",
         description: "Package selection, ceramic coatings, vehicle bookings",
-        productScores: { 'interactive-funnel': 3, 'review-automator': 2, 'ai-chatbot': 2, 'free-website': 2 },
+        productScores: { 'interactive-funnel': 3, 'review-automator': 3, 'ai-chatbot': 3 },
       },
       {
         label: "Other Local Service Business",
         description: "Electrical, Landscaping, Cleaning, Pest Control, Solar, etc.",
-        productScores: { 'free-website': 3, 'ai-receptionist': 2, 'ai-employee': 2, 'review-automator': 2 },
+        productScores: { 'ai-employee': 4, 'ai-receptionist': 3, 'review-automator': 2, 'ai-chatbot': 2 },
       },
     ],
   },
@@ -57,12 +57,12 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       {
         label: "Missing calls when I'm on a job or after hours",
         description: "Callers hang up and hire the next company on Google",
-        productScores: { 'ai-receptionist': 5, 'ai-employee': 4, 'appointment-setter': 2 },
+        productScores: { 'ai-receptionist': 5, 'ai-employee': 5, 'appointment-setter': 2 },
       },
       {
         label: "Our website is outdated, ugly, or nonexistent",
         description: "It doesn't represent our quality or convert mobile visitors",
-        productScores: { 'free-website': 6, 'ai-chatbot': 3, 'interactive-funnel': 2 },
+        productScores: { 'ai-chatbot': 5, 'interactive-funnel': 4, 'ai-employee': 3 },
       },
       {
         label: "Wasting hours answering tire-kickers & quoting dead ends",
@@ -72,7 +72,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       {
         label: "We don't have enough 5-star Google reviews",
         description: "We do great work, but competitors outrank us on Google Maps",
-        productScores: { 'review-automator': 6, 'free-website': 2, 'ai-employee': 2 },
+        productScores: { 'review-automator': 6, 'ai-employee': 2, 'appointment-setter': 2 },
       },
       {
         label: "Customers ghosting, phone tag, and last-minute no-shows",
@@ -89,7 +89,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       {
         label: "Under 15 leads / week",
         description: "Early-stage or solo operation looking to capture every drop",
-        productScores: { 'free-website': 3, 'ai-receptionist': 3, 'review-automator': 2 },
+        productScores: { 'ai-receptionist': 3, 'review-automator': 3, 'ai-chatbot': 2 },
       },
       {
         label: "15 to 40 leads / week",
@@ -116,7 +116,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       {
         label: "I answer myself while driving or working on a job",
         description: "Distracting, noisy background, and dangerous on the road",
-        productScores: { 'ai-receptionist': 5, 'free-website': 2, 'ai-employee': 3 },
+        productScores: { 'ai-receptionist': 5, 'ai-employee': 4, 'appointment-setter': 2 },
       },
       {
         label: "It goes to voicemail (and we call back when free)",
@@ -183,24 +183,22 @@ const LEAD_VOLUME_TIERS: Record<number, { text: string; missedCallsPerWeek: numb
 };
 
 const PRODUCT_COST_MAP: Record<string, { cost: number; display: string }> = {
-  'free-website': { cost: 100, display: '$400 + $100/mo (or $0 Build Starter)' },
+  'ai-employee': { cost: 399, display: '$897 Setup + $399/mo (Combo)' },
   'ai-receptionist': { cost: 299, display: '$497 Setup + $299/mo' },
   'ai-chatbot': { cost: 299, display: '$497 Setup + $299/mo' },
   'review-automator': { cost: 199, display: 'Starts at $199' },
   'appointment-setter': { cost: 500, display: 'Starts at $500/mo' },
   'interactive-funnel': { cost: 1999, display: 'Starts at $1,999' },
-  'ai-employee': { cost: 399, display: '$897 Setup + $399/mo (Combo)' },
 };
 
 export function calculateQuizResults(selectedOptionIndices: number[]): QuizAnalysisResult {
   const scores: Record<string, number> = {
-    'free-website': 0,
+    'ai-employee': 0,
     'ai-receptionist': 0,
     'ai-chatbot': 0,
     'review-automator': 0,
     'appointment-setter': 0,
     'interactive-funnel': 0,
-    'ai-employee': 0,
   };
 
   selectedOptionIndices.forEach((optionIdx, qIdx) => {
@@ -218,10 +216,10 @@ export function calculateQuizResults(selectedOptionIndices: number[]): QuizAnaly
     .map(([id]) => id);
 
   const primaryId = sortedProductIds[0] || 'ai-receptionist';
-  const secondaryId = sortedProductIds[1] || 'free-website';
+  const secondaryId = sortedProductIds[1] || 'ai-chatbot';
 
-  const primaryProduct = PRODUCTS.find((p) => p.id === primaryId) || PRODUCTS[1];
-  const secondaryProduct = PRODUCTS.find((p) => p.id === secondaryId) || PRODUCTS[0];
+  const primaryProduct = PRODUCTS.find((p) => p.id === primaryId) || PRODUCTS[0];
+  const secondaryProduct = PRODUCTS.find((p) => p.id === secondaryId) || PRODUCTS[1];
 
   // Industry & Trade economics
   const tradeOptIdx = selectedOptionIndices[0] ?? 0;

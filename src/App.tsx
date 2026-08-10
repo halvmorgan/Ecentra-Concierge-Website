@@ -4,7 +4,7 @@ import { HeroSection } from './components/HeroSection';
 import { TrustBar } from './components/TrustBar';
 import { QuizSection } from './components/QuizSection';
 import { CalculatorSection } from './components/CalculatorSection';
-import { ProductGridSection } from './components/ProductGridSection';
+import { ProductsPage } from './components/ProductsPage';
 import { VerticalShowcaseSection } from './components/VerticalShowcaseSection';
 import { FreeWebsiteSection } from './components/FreeWebsiteSection';
 import { FinalCtaSection } from './components/FinalCtaSection';
@@ -24,7 +24,7 @@ import { ALL_INDUSTRY_PAGES, getIndustryById } from './data/industryPages';
 
 export default function App() {
   // Navigation & View States
-  const [currentView, setCurrentView] = useState<'home' | 'industry' | 'sms-opt-in' | 'privacy' | 'terms' | 'about' | 'contact'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'products' | 'industry' | 'sms-opt-in' | 'privacy' | 'terms' | 'about' | 'contact'>('home');
   const [activeIndustryId, setActiveIndustryId] = useState<string>('solar');
 
   // Modal states
@@ -62,6 +62,9 @@ export default function App() {
           window.scrollTo({ top: 0, behavior: 'smooth' });
           return;
         }
+      } else if (hash === '#products' || hash === '#ai-products' || hash === '#pricing') {
+        setCurrentView('products');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '#about' || hash === '#about-us') {
         setCurrentView('about');
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -101,6 +104,12 @@ export default function App() {
   const handleNavigateHome = () => {
     setCurrentView('home');
     window.location.hash = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateProducts = () => {
+    setCurrentView('products');
+    window.location.hash = 'products';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -195,6 +204,7 @@ export default function App() {
         onOpenIndustryDirectory={() => setIsIndustryDirectoryOpen(true)}
         onSelectIndustry={handleSelectIndustry}
         onNavigateHome={handleNavigateHome}
+        onNavigateProducts={handleNavigateProducts}
         onNavigateAbout={handleNavigateAbout}
         onNavigateContact={handleNavigateContact}
         onNavigateSmsOptIn={handleNavigateSmsOptIn}
@@ -202,7 +212,18 @@ export default function App() {
       />
 
       {/* Conditional Rendering of Views */}
-      {currentView === 'industry' ? (
+      {currentView === 'products' ? (
+        <ProductsPage
+          onBackToHome={handleNavigateHome}
+          onOpenProductDetail={(prod) => setSelectedProductForDetail(prod)}
+          onOpenBookCallWithProduct={handleOpenBookCallWithProduct}
+          onOpenFreeWebsite={() => setIsFreeWebsiteModalOpen(true)}
+          onNavigateQuiz={() => handleScrollTo('quiz-section')}
+          onNavigateCalculator={() => handleScrollTo('calculator-section')}
+          onNavigateContact={handleNavigateContact}
+          onNavigateSmsOptIn={handleNavigateSmsOptIn}
+        />
+      ) : currentView === 'industry' ? (
         <IndustryLandingPage
           industry={currentIndustryData}
           onBackToHome={handleNavigateHome}
@@ -294,14 +315,7 @@ export default function App() {
             onOpenBookCallWithRoi={handleOpenBookCallWithRoi}
           />
 
-          {/* 5. Product Grid Section (All 7 AI Products with "Starting at" Pricing) */}
-          <ProductGridSection
-            onOpenProductDetail={(prod) => setSelectedProductForDetail(prod)}
-            onOpenBookCallWithProduct={handleOpenBookCallWithProduct}
-            onOpenFreeWebsite={() => setIsFreeWebsiteModalOpen(true)}
-          />
-
-          {/* 6. Vertical-Specific Proof & Showcase Section (Dedicated Landing Pages for 30 Verticals) */}
+          {/* 5. Vertical-Specific Proof & Showcase Section */}
           <VerticalShowcaseSection
             selectedVerticalId={selectedVerticalId}
             onSelectVertical={setSelectedVerticalId}
@@ -314,7 +328,7 @@ export default function App() {
             onOpenFreeWebsite={() => setIsFreeWebsiteModalOpen(true)}
           />
 
-          {/* 7. Dedicated Free Website Offer Section (No Catch, No Credit Card, 3-Step Flow) */}
+          {/* 6. Dedicated Free Website Offer Section (No Catch, No Credit Card, 3-Step Flow) */}
           <FreeWebsiteSection
             onSuccessClaim={(data) => {
               showToast(`Application ${data.leadId} submitted successfully!`);
@@ -325,7 +339,7 @@ export default function App() {
             }}
           />
 
-          {/* 8. Final CTA (Book a 15-Minute Strategy Call) */}
+          {/* 7. Final CTA (Book a 15-Minute Strategy Call) */}
           <FinalCtaSection
             onOpenBookCall={() => {
               setBookingInterest('15-Minute Strategy Call');
@@ -336,7 +350,7 @@ export default function App() {
         </main>
       )}
 
-      {/* 9. Footer (Secondary Quick Capture, Categorized 30-Industry Directory, Links, Legal) */}
+      {/* Footer */}
       <Footer
         onOpenFreeWebsite={() => setIsFreeWebsiteModalOpen(true)}
         onOpenBookCall={() => {
@@ -346,6 +360,8 @@ export default function App() {
         onOpenIndustryDirectory={() => setIsIndustryDirectoryOpen(true)}
         onSelectIndustry={handleSelectIndustry}
         onScrollTo={handleScrollTo}
+        onNavigateHome={handleNavigateHome}
+        onNavigateProducts={handleNavigateProducts}
         onNavigateAbout={handleNavigateAbout}
         onNavigateContact={handleNavigateContact}
         onNavigatePrivacy={handleNavigatePrivacy}

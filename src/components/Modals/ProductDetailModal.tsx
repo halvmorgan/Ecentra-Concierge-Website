@@ -32,9 +32,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 }) => {
   if (!isOpen || !product) return null;
 
-  const isFreeWebsite = product.id === 'free-website';
-  const isPhoneOrChat = product.id === 'ai-receptionist' || product.id === 'ai-chatbot';
-
   return (
     <div
       id="product-detail-modal-overlay"
@@ -79,40 +76,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           {product.description}
         </div>
 
-        {/* Combo Offer Callout for Phone Assistant & Website Chatbot */}
-        {isPhoneOrChat && product.comboOffer && (
-          <div className="p-4 rounded-2xl bg-gradient-to-r from-[#00E599]/15 to-emerald-500/10 border border-[#00E599]/40 text-xs text-slate-200 mb-6 space-y-2">
-            <div className="flex items-center justify-between font-bold text-white">
-              <span className="text-[#00E599] flex items-center gap-1.5 uppercase tracking-wider text-[11px]">
-                <Sparkles className="w-3.5 h-3.5" />
-                {product.comboOffer.title}
-              </span>
-              <span className="bg-[#00E599]/20 px-2 py-0.5 rounded text-[11px] text-[#00E599] font-extrabold">
-                {product.comboOffer.price}
-              </span>
-            </div>
-            <p className="text-slate-300 text-xs leading-relaxed">
-              {product.comboOffer.description}
-            </p>
-          </div>
-        )}
-
-        {/* Free Website / Upgrade Specific Breakdown Box */}
-        {isFreeWebsite && (
-          <div className="p-4 rounded-2xl bg-gradient-to-r from-[#00E599]/10 to-transparent border border-[#00E599]/30 text-xs text-slate-200 mb-6 space-y-2">
-            <div className="flex items-center justify-between font-bold text-white">
-              <span className="text-[#00E599] uppercase tracking-wider text-[11px]">Pricing & Options:</span>
-              <span className="bg-[#00E599]/20 px-2 py-0.5 rounded text-[11px] text-[#00E599]">Starts at $400 ($100/mo) or $0 Build</span>
-            </div>
-            <p className="text-slate-300 text-[11px] leading-relaxed">
-              <strong>Website Upgrade ($400 + $100/mo):</strong> Complete custom layout, speed optimization, local SEO schema, and dedicated hosting & care.
-            </p>
-            <p className="text-slate-400 text-[11px] leading-relaxed">
-              <strong>$0 Build Starter Offer:</strong> For qualifying local businesses needing an instant clean starter site with transparent $97/mo hosting & security.
-            </p>
-          </div>
-        )}
-
         {/* Best For Box */}
         <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 text-xs text-slate-300 mb-6">
           <span className="font-bold text-white block mb-0.5">Ideal Business Profile:</span>
@@ -155,7 +118,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               Instant Stripe checkout • Concierge prompt setup included
             </div>
             <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
-              {product.checkoutUrl && (
+              {product.checkoutUrl ? (
                 <a
                   id="modal-checkout-btn"
                   href={product.checkoutUrl}
@@ -167,18 +130,16 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <span>Order Now • {product.startingPrice}</span>
                   <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform shrink-0" />
                 </a>
-              )}
-
-              {isFreeWebsite && (
+              ) : (
                 <button
                   onClick={() => {
                     onClose();
-                    onOpenFreeWebsite();
+                    onOpenBookCallWithProduct(product.name);
                   }}
-                  className="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer font-heading"
+                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
                 >
-                  <span>Claim $0 Starter Build</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <Sparkles className="w-4 h-4 shrink-0" />
+                  <span>Get Bundle Package • {product.startingPrice}</span>
                 </button>
               )}
 

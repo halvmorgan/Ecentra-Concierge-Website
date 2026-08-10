@@ -54,7 +54,7 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
   const filteredProducts = filterCategory === 'all'
     ? PRODUCTS
     : PRODUCTS.filter((p) => {
-        if (filterCategory === 'core') return p.id === 'free-website' || p.id === 'ai-receptionist' || p.id === 'ai-employee';
+        if (filterCategory === 'core') return p.id === 'ai-employee' || p.id === 'ai-receptionist' || p.id === 'ai-chatbot';
         if (filterCategory === 'growth') return p.id === 'review-automator' || p.id === 'interactive-funnel';
         if (filterCategory === 'messaging') return p.id === 'ai-chatbot' || p.id === 'appointment-setter';
         return true;
@@ -86,7 +86,7 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
                   : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
               }`}
             >
-              All 7 Products
+              All 6 Services
             </button>
             <button
               onClick={() => setFilterCategory('core')}
@@ -96,7 +96,7 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
                   : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
               }`}
             >
-              Core Offers (Website & Phone)
+              Core Offers (Phone & Chatbot)
             </button>
             <button
               onClick={() => setFilterCategory('messaging')}
@@ -121,12 +121,10 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
           </div>
         </div>
 
-        {/* 7 Products Grid */}
+        {/* 6 Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => {
             const isFeatured = Boolean(product.featuredBadge);
-            const isLeadMagnet = product.id === 'free-website';
-            const isPhoneOrChat = product.id === 'ai-receptionist' || product.id === 'ai-chatbot';
 
             return (
               <div
@@ -193,43 +191,12 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
                       </div>
                     ))}
                   </div>
-
-                  {/* Combo Discount Callout (for Phone Assistant and Website Chatbot) */}
-                  {isPhoneOrChat && product.comboOffer && (
-                    <div className="mt-4 mb-4 p-3.5 rounded-2xl bg-gradient-to-r from-[#00E599]/15 to-emerald-500/10 border border-[#00E599]/40 text-xs shadow-inner">
-                      <div className="flex items-center justify-between font-bold text-white mb-1">
-                        <span className="text-[#00E599] flex items-center gap-1.5 font-heading text-xs">
-                          <Sparkles className="w-3.5 h-3.5 text-[#00E599]" />
-                          Chatbot + Phone Bundle
-                        </span>
-                        <span className="text-[10px] bg-[#00E599]/20 text-[#00E599] px-2 py-0.5 rounded-full font-extrabold border border-[#00E599]/30">
-                          Save $97 Setup & $199/mo
-                        </span>
-                      </div>
-                      <div className="text-white font-bold text-xs mb-1">
-                        Starts at $897 Setup fee + $399 monthly
-                      </div>
-                      <p className="text-slate-300 text-[11px] leading-snug mb-2">
-                        Purchase Website Chatbot & Phone Assistant together for complete coverage at a bundled discount.
-                      </p>
-                      <button
-                        onClick={() => {
-                          const comboProd = PRODUCTS.find((p) => p.id === 'ai-employee');
-                          if (comboProd) onOpenProductDetail(comboProd);
-                        }}
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-[#00E599] hover:text-white transition-colors cursor-pointer"
-                      >
-                        <span>View Chatbot + Phone Combo Offer</span>
-                        <ArrowRight className="w-3 h-3" />
-                      </button>
-                    </div>
-                  )}
                 </div>
 
                 {/* Card Footer CTAs */}
                 <div className="pt-4 border-t border-white/10 space-y-2.5">
                   {/* Direct Stripe Buy Button */}
-                  {product.checkoutUrl && !isLeadMagnet && (
+                  {product.checkoutUrl ? (
                     <a
                       id={`product-checkout-${product.id}`}
                       href={product.checkoutUrl}
@@ -241,31 +208,15 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
                       <span>Get Started Now</span>
                       <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform shrink-0" />
                     </a>
-                  )}
-
-                  {/* Special Lead Magnet Dual Action */}
-                  {isLeadMagnet && (
-                    <div className="space-y-2">
-                      <a
-                        id="product-checkout-website-upgrade"
-                        href={product.checkoutUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full py-2.5 px-4 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading group"
-                      >
-                        <CreditCard className="w-4 h-4 shrink-0" />
-                        <span>Website Upgrade ($400 + $100/mo)</span>
-                        <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform shrink-0" />
-                      </a>
-                      <button
-                        id={`product-cta-${product.id}`}
-                        onClick={onOpenFreeWebsite}
-                        className="w-full py-2 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/15 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
-                      >
-                        <span>Claim $0 Starter Build ($97/mo Care)</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
+                  ) : (
+                    <button
+                      id={`product-cta-${product.id}`}
+                      onClick={() => onOpenBookCallWithProduct(product.name)}
+                      className="w-full py-3 px-4 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
+                    >
+                      <Sparkles className="w-4 h-4 shrink-0" />
+                      <span>Get Bundle Package ($897 + $399/mo)</span>
+                    </button>
                   )}
 
                   {/* Secondary: Book Call */}

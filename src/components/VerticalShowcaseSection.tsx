@@ -15,12 +15,11 @@ import {
   Quote,
   TrendingUp,
   Building,
-  Search,
   Sun,
   Shield,
   Zap,
 } from 'lucide-react';
-import { ALL_INDUSTRY_PAGES, INDUSTRY_CATEGORIES } from '../data/industryPages';
+import { ALL_INDUSTRY_PAGES } from '../data/industryPages';
 import { IndustryLandingData } from '../types';
 
 interface VerticalShowcaseSectionProps {
@@ -257,47 +256,6 @@ export const VerticalShowcaseSection: React.FC<VerticalShowcaseSectionProps> = (
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* 30-Industry Quick Landing Page Grid Trigger */}
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-white/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-            <div>
-              <h4 className="font-heading text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-                <Building className="w-5 h-5 text-[#00E599]" />
-                <span>All 30 Service Industry Landing Pages Available</span>
-              </h4>
-              <p className="text-xs text-slate-300 mt-0.5">
-                Click any trade below to launch its full-featured dedicated landing page, ROI calculator & product breakdown.
-              </p>
-            </div>
-            <button
-              onClick={onOpenIndustryDirectory}
-              className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-xs font-semibold text-white transition-all flex items-center gap-2 cursor-pointer shrink-0"
-            >
-              <Search className="w-3.5 h-3.5 text-[#00E599]" />
-              <span>Search All 30 Verticals</span>
-            </button>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2.5">
-            {ALL_INDUSTRY_PAGES.map((ind) => (
-              <button
-                key={ind.id}
-                id={`all-trades-grid-btn-${ind.id}`}
-                onClick={() => onOpenIndustryPage(ind.id)}
-                className="p-2.5 rounded-xl bg-white/5 hover:bg-[#00E599]/15 border border-white/10 hover:border-[#00E599]/40 text-left transition-all group cursor-pointer"
-              >
-                <div className="text-xs font-bold text-white group-hover:text-[#00E599] transition-colors truncate">
-                  {ind.name}
-                </div>
-                <div className="text-[10px] text-slate-400 flex items-center justify-between mt-1">
-                  <span>~${ind.typicalJobValue}</span>
-                  <ArrowRight className="w-3 h-3 text-[#00E599] opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </button>
-            ))}
           </div>
         </div>
       </div>

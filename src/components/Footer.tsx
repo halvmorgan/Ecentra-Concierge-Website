@@ -8,6 +8,8 @@ interface FooterProps {
   onOpenIndustryDirectory: () => void;
   onSelectIndustry: (id: string) => void;
   onScrollTo: (id: string) => void;
+  onNavigateHome?: () => void;
+  onNavigateProducts?: () => void;
   onNavigateAbout: () => void;
   onNavigateContact: () => void;
   onNavigatePrivacy: () => void;
@@ -21,6 +23,8 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenIndustryDirectory,
   onSelectIndustry,
   onScrollTo,
+  onNavigateHome,
+  onNavigateProducts,
   onNavigateAbout,
   onNavigateContact,
   onNavigatePrivacy,
@@ -230,7 +234,6 @@ export const Footer: React.FC<FooterProps> = ({
               The AI receptionist, review automator, and modern website engine engineered specifically for local home, health, trade, and professional service operators.
             </p>
             <div className="text-xs text-slate-400 space-y-1.5">
-              <div className="text-white font-medium">Founder: Harold Morgan</div>
               <div className="flex items-center gap-1.5 text-slate-300">
                 <MapPin className="w-3.5 h-3.5 text-[#00E599] shrink-0" />
                 <span>6272 Saginaw Rd #1074, Grand Blanc, MI 48439</span>
@@ -248,9 +251,6 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Core Navigation */}
           <div className="space-y-3 text-xs">
-            <div className="font-heading font-bold text-white uppercase tracking-wider">
-              Platform & Company
-            </div>
             <ul className="space-y-2">
               <li>
                 <button
@@ -258,7 +258,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onNavigateAbout}
                   className="hover:text-[#00E599] text-white font-semibold transition-colors text-left cursor-pointer flex items-center gap-1.5"
                 >
-                  <span>About Us (Harold's Story)</span>
+                  <span>About Us (Founder's Story)</span>
                 </button>
               </li>
               <li>
@@ -296,7 +296,14 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onScrollTo('products-section')}
+                  id="footer-link-products"
+                  onClick={() => {
+                    if (onNavigateProducts) {
+                      onNavigateProducts();
+                    } else {
+                      onScrollTo('products-section');
+                    }
+                  }}
                   className="hover:text-[#00E599] transition-colors text-left cursor-pointer"
                 >
                   AI Product Menu & Pricing

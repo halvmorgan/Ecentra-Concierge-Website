@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles, Menu, X, ArrowRight, MessageSquare, Calculator, CheckSquare, Layers } from 'lucide-react';
 
 interface NavbarProps {
-  currentView?: 'home' | 'industry' | 'sms-opt-in' | 'privacy' | 'terms' | 'about' | 'contact';
+  currentView?: 'home' | 'products' | 'industry' | 'sms-opt-in' | 'privacy' | 'terms' | 'about' | 'contact';
   activeIndustryName?: string;
   onOpenFreeWebsite: () => void;
   onOpenBookCall: () => void;
   onOpenIndustryDirectory?: () => void;
   onSelectIndustry?: (id: string) => void;
   onNavigateHome: () => void;
+  onNavigateProducts: () => void;
   onNavigateAbout?: () => void;
   onNavigateContact?: () => void;
   onNavigateSmsOptIn: () => void;
@@ -20,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenFreeWebsite,
   onOpenBookCall,
   onNavigateHome,
+  onNavigateProducts,
   onNavigateSmsOptIn,
   onScrollTo,
 }) => {
@@ -100,8 +102,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             id="nav-link-products"
-            onClick={() => handleNavClick('products-section')}
-            className="hover:text-[#00E599] transition-colors cursor-pointer flex items-center gap-1.5"
+            onClick={() => {
+              onNavigateProducts();
+              setMobileMenuOpen(false);
+            }}
+            className={`hover:text-[#00E599] transition-colors cursor-pointer flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg ${
+              currentView === 'products'
+                ? 'text-[#00E599] bg-[#00E599]/10 border border-[#00E599]/30 font-semibold'
+                : 'text-slate-300 hover:bg-white/5'
+            }`}
           >
             <Layers className="w-4 h-4 text-[#00E599]" />
             <span>AI Products</span>
@@ -174,11 +183,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>Missed-Lead Cost Calculator</span>
             </button>
             <button
-              onClick={() => handleNavClick('products-section')}
-              className="text-left py-2 px-3 rounded-lg hover:bg-white/5 flex items-center gap-2.5"
+              id="mobile-nav-products-btn"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onNavigateProducts();
+              }}
+              className={`text-left py-2 px-3 rounded-lg flex items-center gap-2.5 ${
+                currentView === 'products'
+                  ? 'bg-[#00E599]/15 text-[#00E599] font-bold border border-[#00E599]/30'
+                  : 'hover:bg-white/5 text-slate-200'
+              }`}
             >
               <Layers className="w-4 h-4 text-[#00E599]" />
-              <span>All 7 AI Products Menu</span>
+              <span>AI Products & Pricing Catalog</span>
             </button>
 
             {/* Mobile SMS Opt-In Link */}
