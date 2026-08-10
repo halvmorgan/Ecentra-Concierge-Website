@@ -1,0 +1,7 @@
+{
+  "name": "Ecentra Concierge",
+  "description": "AI-powered lead capture, 24/7 receptionist, review automation, and free website offer for local service businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
