@@ -59,7 +59,7 @@ export const ContactUsPage: React.FC<ContactUsPageProps> = ({
     setErrorMessage('');
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/.netlify/functions/submit-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
