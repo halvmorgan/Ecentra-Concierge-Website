@@ -1,2 +1,3 @@
-My website build goes here
-My functions are in netlify/functions
+[build]
+  publish = "dist"
+  functions = "netlify/functions"
