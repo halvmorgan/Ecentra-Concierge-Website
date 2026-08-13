@@ -41,7 +41,7 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('/api/leads/website-claim', {
+      const res = await fetch('/.netlify/functions/submit-starter-site', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
