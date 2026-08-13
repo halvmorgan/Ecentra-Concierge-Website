@@ -12,6 +12,8 @@ export default async (req) => {
   try {
     const formData = await req.json();
 
+    const leadId = `EC-SITE-${Math.floor(100000 + Math.random() * 900000)}`;
+
     const webhookUrl = process.env.STARTER_SITE_WEBHOOK_URL;
 
     if (!webhookUrl) {
@@ -31,10 +33,11 @@ export default async (req) => {
     }
 
     return new Response(
-      JSON.stringify({
-        success: true,
-        message: "Starter site lead sent successfully",
-      }),
+  JSON.stringify({
+    success: true,
+    message: "Starter site lead sent successfully",
+    leadId,
+  }),
       {
         status: 200,
         headers: { "Content-Type": "application/json" },
