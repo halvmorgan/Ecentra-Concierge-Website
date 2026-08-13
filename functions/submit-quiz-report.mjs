@@ -17,7 +17,7 @@ export default async (req) => {
       leadId,
     };
 
-    const webhookUrl = "PASTE_YOUR_HIGHLEVEL_WEBHOOK_URL_HERE";
+    const webhookUrl = "https://services.leadconnectorhq.com/hooks/EeaJk29wNmjpYB3MQAZu/webhook-trigger/a513e393-bf35-4b09-84a5-c4a2f4157ee6";
 
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
