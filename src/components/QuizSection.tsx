@@ -92,7 +92,7 @@ export const QuizSection: React.FC<QuizSectionProps> = ({
     setIsUnlocking(true);
 
     try {
-      await fetch('/api/leads/quiz-match', {
+      await fetch('/.netlify/functions/submit-quiz-report', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
