@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({
     e.preventDefault();
     if (!quickPhone || !quickBiz) return;
     try {
-      await fetch('/api/leads/website-claim', {
+      await fetch('/.netlify/functions/submit-starter-site', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
