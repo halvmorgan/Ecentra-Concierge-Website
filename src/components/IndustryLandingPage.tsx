@@ -98,7 +98,7 @@ export const IndustryLandingPage: React.FC<IndustryLandingPageProps> = ({
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('/api/leads/website-claim', {
+      const res = await fetch('/.netlify/functions/submit-starter-site', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
