@@ -12,7 +12,7 @@ export default async (req) => {
   try {
     const formData = await req.json();
 
-    const webhookUrl = process.env.HIGHLEVEL_WEBHOOK_URL;
+    const webhookUrl = "https://services.leadconnectorhq.com/hooks/8wtMUEAdUnx0Y7nVe93R/webhook-trigger/QwIz6v9ENOnJZV4rvHng";
 
     if (!webhookUrl) {
       throw new Error("HIGHLEVEL_WEBHOOK_URL is missing");
