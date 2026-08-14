@@ -14,7 +14,7 @@ export default async (req) => {
 
     const leadId = `EC-SITE-${Math.floor(100000 + Math.random() * 900000)}`;
 
-    const webhookUrl = https://services.leadconnectorhq.com/hooks/8wtMUEAdUnx0Y7nVe93R/webhook-trigger/vi9hXpsq5c4udqkjxYHk;
+    const webhookUrl = "https://services.leadconnectorhq.com/hooks/8wtMUEAdUnx0Y7nVe93R/webhook-trigger/vi9hXpsq5c4udqkjxYHk";
 
     if (!webhookUrl) {
       throw new Error("STARTER_SITE_WEBHOOK_URL is missing");
