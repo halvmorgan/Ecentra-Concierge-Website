@@ -23,6 +23,9 @@ lastName: formData.lastName || (formData.name ? formData.name.trim().split(/\s+/
         consentTimestamp: formData.consentTimestamp || now,
         ipAddress: formData.ipAddress || "",
         optInCategories: formData.optInCategories || [],
+        optInCategoriesText: Array.isArray(formData.optInCategories)
+  ? formData.optInCategories.join(", ")
+  : (formData.optInCategories || ""),
         notes: formData.notes || "",
       },
     };
