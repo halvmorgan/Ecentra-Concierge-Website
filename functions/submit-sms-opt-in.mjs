@@ -11,7 +11,9 @@ export default async (req) => {
       status: "new",
       createdAt: now,
       data: {
-        name: formData.name || "",
+        name: formData.name || `${formData.firstName || ""} ${formData.lastName || ""}`.trim(),
+firstName: formData.firstName || (formData.name ? formData.name.trim().split(/\s+/)[0] : ""),
+lastName: formData.lastName || (formData.name ? formData.name.trim().split(/\s+/).slice(1).join(" ") : ""),
         phone: formData.phone || "",
         email: formData.email || "",
         businessName: formData.businessName || "",
