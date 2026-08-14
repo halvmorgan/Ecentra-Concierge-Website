@@ -17,7 +17,7 @@ export default async (req) => {
       leadId,
     };
 
-    const webhookUrl = "https://services.leadconnectorhq.com/hooks/EeaJk29wNmjpYB3MQAZu/webhook-trigger/ca409431-6e3f-445d-b1eb-0c44bab290e4";
+    const webhookUrl = "https://services.leadconnectorhq.com/hooks/8wtMUEAdUnx0Y7nVe93R/webhook-trigger/4i5ruhAAMotVwEp5Aoiz";
           
 
     const webhookResponse = await fetch(webhookUrl, {
