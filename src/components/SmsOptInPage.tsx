@@ -98,7 +98,7 @@ export const SmsOptInPage: React.FC<SmsOptInPageProps> = ({
         consentText: 'User explicitly checked the A2P 10DLC compliant SMS opt-in consent box on the Ecentra Concierge website.',
       };
 
-      const res = await fetch('/api/sms-opt-in', {
+      const res = await fetch('/.netlify/functions/submit-sms-opt-in', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
