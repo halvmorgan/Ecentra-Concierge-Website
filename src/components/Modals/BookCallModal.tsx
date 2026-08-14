@@ -57,7 +57,7 @@ export const BookCallModal: React.FC<BookCallModalProps> = ({
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('/api/leads/book-call', {
+      const res = await fetch('/.netlify/functions/submit-book-call', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
