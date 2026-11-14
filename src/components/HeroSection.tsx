@@ -159,7 +159,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 onClick={onOpenBookCall}
                 className="text-[#00E599] hover:underline font-semibold flex items-center gap-1 cursor-pointer"
               >
-                <span>Explore 24/7 AI Receptionist & Chatbot</span>
+                <span>Explore NeverMiss & LeadCatch</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -175,10 +175,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
                   <div>
                     <span className="inline-block text-[11px] font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-[#00E599]/20 text-[#00E599] border border-[#00E599]/30 mb-1">
-                      Starter Offer • AI Search Ready
+                      ZeroDown Site • AI Search Ready
                     </span>
                     <h3 className="font-heading text-xl font-bold text-white">
-                      Claim $0 Starter Site
+                      Claim Your ZeroDown Site
                     </h3>
                   </div>
                   <div className="text-right">
@@ -268,10 +268,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     className="w-full py-3.5 px-4 font-bold text-[#080E21] bg-[#00E599] hover:bg-[#34D399] rounded-xl shadow-lg shadow-[#00E599]/25 transition-all flex items-center justify-center gap-2 cursor-pointer font-heading text-sm disabled:opacity-50 hover:shadow-xl hover:shadow-[#00E599]/35 transform active:scale-98"
                   >
                     {isSubmitting ? (
-                      <span>Reserving Starter Build Slot...</span>
+                      <span>Reserving ZeroDown Site Slot...</span>
                     ) : (
                       <>
-                        <span>Claim $0 Starter Build ($97/mo Hosting)</span>
+                        <span>Claim Your ZeroDown Site ($97/mo Hosting)</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}
@@ -281,7 +281,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 {/* Trust mini bar */}
                 <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
                   <span className="flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> $0 Upfront Build
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> ZeroDown Site ($0 Build)
                   </span>
                   <span className="flex items-center gap-1">
                     <Bot className="w-3.5 h-3.5 text-[#00E599]" /> AI Search Ready

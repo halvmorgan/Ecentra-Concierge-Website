@@ -117,8 +117,8 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
               We use collected information strictly to fulfill our services and operate our AI concierge tools:
             </p>
             <ul className="space-y-2 list-disc list-inside text-xs text-slate-300 pl-2">
-              <li>To construct and deploy your foundational starter website and manage your $97/month cloud hosting & maintenance environment.</li>
-              <li>To configure your 24/7 AI Receptionist, Smart AI Chatbot, and 5-Star Review Automator instances.</li>
+              <li>To construct and deploy your ZeroDown Site and manage your $97/month cloud hosting & maintenance environment.</li>
+              <li>To configure your NeverMiss, LeadCatch, 5-Star Engine, BookedSolid, and The Fast Track instances.</li>
               <li>To send requested SMS alerts regarding new customer inquiries, quote requests, and appointment confirmations.</li>
               <li>To calculate and present tailored ROI benchmarks based on your trade vertical.</li>
               <li>To provide responsive technical support, billing management, and client onboarding.</li>

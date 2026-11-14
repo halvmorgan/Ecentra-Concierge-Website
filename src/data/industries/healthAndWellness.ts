@@ -33,7 +33,7 @@ export const HEALTH_AND_WELLNESS_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Pre-screens dental insurance carriers (Delta, Cigna, MetLife, Aetna) and offers instant chair times.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Dental Practices',
+        title: '5-Star Engine for Dental Practices',
         howItWorks: 'Sends gentle, HIPAA-compliant review requests 1 hour after a painless cleaning or cosmetic restoration.',
         industryBenefit: 'Builds an overwhelming 5-star Google Maps presence that attracts high-value private-pay patients.',
         sampleAction: 'Directs delighted patients to share their pain-free experience on your Google Business profile.',
@@ -129,7 +129,7 @@ export const HEALTH_AND_WELLNESS_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Prequalifies insurance vs cash plans and confirms doctor availability in seconds.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Chiropractors',
+        title: '5-Star Engine for Chiropractors',
         howItWorks: 'Texts patients after their third adjustment or when they report a major pain drop on their wellness scale.',
         industryBenefit: 'Pushes your clinic to the top of Google Maps for "best chiropractor near me".',
         sampleAction: 'Collects verified 5-star reviews highlighting fast pain relief and gentle techniques.',
@@ -225,7 +225,7 @@ export const HEALTH_AND_WELLNESS_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Pre-screens pet age, weight, and vaccination history before scheduling.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Vet Clinics',
+        title: '5-Star Engine for Vet Clinics',
         howItWorks: 'Texts pet owners 2 hours after their visit when their pet is safely home, resting, and on the road to recovery.',
         industryBenefit: 'Generates heartfelt 5-star Google reviews praising your compassionate veterinarians.',
         sampleAction: 'Invites grateful pet parents to share a photo of their happy pet on your Google Business profile.',
@@ -405,7 +405,7 @@ export const HEALTH_AND_WELLNESS_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Showcases treatments for Neuromodulators (Botox/Dysport), Dermal Fillers, Microneedling RF, Semaglutide, and Laser Hair Removal.',
       },
       aiReceptionist: {
-        title: '24/7 VIP Med Spa Phone Receptionist',
+        title: '24/7 VIP Med Spa Phone Answering (NeverMiss)',
         howItWorks: 'Knowledgeable on units of Botox, syringe pricing, downtime expectations, and skin rejuvenation; schedules consultations.',
         industryBenefit: 'Delivers a polished, luxurious concierge phone experience at all hours of the night.',
         sampleAction: '“Nurse Practitioner Sarah has a consultation opening this Thursday at 2:00 PM for facial balancing and lip enhancement.”',
@@ -417,7 +417,7 @@ export const HEALTH_AND_WELLNESS_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Calculates rough package estimates and collects verified mobile numbers for VIP invitations.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Med Spas',
+        title: '5-Star Engine for Med Spas',
         howItWorks: 'Sends automated review prompts at the 14-day post-treatment mark when Botox is fully settled and filler results look flawless.',
         industryBenefit: 'Creates an insurmountable 5-star Google review lead over competing local clinics.',
         sampleAction: 'Invites glowing clients to share their natural, refreshed results on your Google profile.',

@@ -19,6 +19,7 @@ import {
   Layers,
   PhoneForwarded,
   Filter,
+  Globe,
 } from 'lucide-react';
 import { PRODUCTS } from '../data/products';
 import { Product } from '../types';
@@ -32,6 +33,7 @@ interface ProductsPageProps {
   onNavigateCalculator?: () => void;
   onNavigateContact?: () => void;
   onNavigateSmsOptIn?: () => void;
+  onNavigateFunnels?: () => void;
 }
 
 export const ProductsPage: React.FC<ProductsPageProps> = ({
@@ -43,11 +45,14 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
   onNavigateCalculator,
   onNavigateContact,
   onNavigateSmsOptIn,
+  onNavigateFunnels,
 }) => {
   const [filterCategory, setFilterCategory] = useState<string>('all');
 
   const getProductIcon = (iconName: string) => {
     switch (iconName) {
+      case 'Globe':
+        return <Globe className="w-6 h-6 text-[#00E599]" />;
       case 'PhoneCall':
         return <PhoneCall className="w-6 h-6 text-[#00E599]" />;
       case 'MessageSquareText':
@@ -67,9 +72,13 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
   const filteredProducts = filterCategory === 'all'
     ? PRODUCTS
     : PRODUCTS.filter((p) => {
-        if (filterCategory === 'core') return p.id === 'ai-employee' || p.id === 'ai-receptionist' || p.id === 'ai-chatbot';
-        if (filterCategory === 'growth') return p.id === 'review-automator' || p.id === 'interactive-funnel';
-        if (filterCategory === 'messaging') return p.id === 'ai-chatbot' || p.id === 'appointment-setter';
+        if (filterCategory === 'leadcatch') return p.id === 'ai-chatbot';
+        if (filterCategory === 'nevermiss') return p.id === 'ai-receptionist';
+        if (filterCategory === 'zerodown') return p.id === 'zero-down-site';
+        if (filterCategory === 'employee') return p.id === 'ai-employee';
+        if (filterCategory === 'fasttrack') return p.id === 'interactive-funnel';
+        if (filterCategory === 'fivestar') return p.id === 'review-automator';
+        if (filterCategory === 'automation') return p.id === 'appointment-setter';
         return true;
       });
 
@@ -89,6 +98,15 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </button>
           
           <div className="flex items-center gap-4 text-xs">
+            {onNavigateFunnels && (
+              <button
+                onClick={onNavigateFunnels}
+                className="text-[#00E599] font-bold hover:underline transition-colors cursor-pointer flex items-center gap-1 bg-[#00E599]/10 px-2.5 py-1 rounded-md border border-[#00E599]/20"
+              >
+                <Sparkles className="w-3 h-3 text-[#00E599]" />
+                <span>The Fast Track Demos</span>
+              </button>
+            )}
             {onNavigateQuiz && (
               <button
                 onClick={onNavigateQuiz}
@@ -137,7 +155,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00E599]/10 border border-[#00E599]/30 text-xs font-bold text-[#00E599]">
             <Sparkles className="w-4 h-4" />
-            <span>Direct Pricing & Modular Catalog</span>
+            <span>Direct Pricing & AI Suite</span>
           </div>
 
           <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -148,7 +166,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Choose individual AI services or bundle our Phone & Chatbot together for maximum savings. Instant Stripe checkout, zero long-term contracts, and 48-hour trade-specific onboarding.
+            Equip your business with LeadCatch, NeverMiss, ZeroDown Site, The New Hire, The Fast Track, 5-Star Engine, and BookedSolid. Instant Stripe checkout, zero long-term contracts, and 48-hour trade-specific onboarding.
           </p>
 
           {/* Quick Value Proof Pills */}
@@ -178,37 +196,77 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
             }`}
           >
-            All 6 Services
+            All Products ({PRODUCTS.length})
           </button>
           <button
-            onClick={() => setFilterCategory('core')}
+            onClick={() => setFilterCategory('leadcatch')}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
-              filterCategory === 'core'
+              filterCategory === 'leadcatch'
                 ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold shadow-lg shadow-[#00E599]/20'
                 : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
             }`}
           >
-            Core Offers (Phone & Chatbot)
+            LeadCatch
           </button>
           <button
-            onClick={() => setFilterCategory('messaging')}
+            onClick={() => setFilterCategory('nevermiss')}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
-              filterCategory === 'messaging'
+              filterCategory === 'nevermiss'
                 ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold shadow-lg shadow-[#00E599]/20'
                 : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
             }`}
           >
-            Messaging & Lead Capture
+            NeverMiss
           </button>
           <button
-            onClick={() => setFilterCategory('growth')}
+            onClick={() => setFilterCategory('zerodown')}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
-              filterCategory === 'growth'
+              filterCategory === 'zerodown'
                 ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold shadow-lg shadow-[#00E599]/20'
                 : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
             }`}
           >
-            Reputation & Funnels
+            ZeroDown Site
+          </button>
+          <button
+            onClick={() => setFilterCategory('employee')}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+              filterCategory === 'employee'
+                ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold shadow-lg shadow-[#00E599]/20'
+                : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
+            }`}
+          >
+            The New Hire
+          </button>
+          <button
+            onClick={() => setFilterCategory('fasttrack')}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+              filterCategory === 'fasttrack'
+                ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold shadow-lg shadow-[#00E599]/20'
+                : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
+            }`}
+          >
+            The Fast Track
+          </button>
+          <button
+            onClick={() => setFilterCategory('fivestar')}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+              filterCategory === 'fivestar'
+                ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold shadow-lg shadow-[#00E599]/20'
+                : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
+            }`}
+          >
+            5-Star Engine
+          </button>
+          <button
+            onClick={() => setFilterCategory('automation')}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+              filterCategory === 'automation'
+                ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold shadow-lg shadow-[#00E599]/20'
+                : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
+            }`}
+          >
+            BookedSolid
           </button>
         </div>
 
@@ -298,8 +356,28 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
 
                 {/* Card Footer CTAs */}
                 <div className="pt-4 border-t border-white/10 space-y-2.5">
-                  {/* Direct Stripe Buy Button */}
-                  {product.checkoutUrl ? (
+                  {/* Special The Fast Track Showcase Button */}
+                  {product.id === 'interactive-funnel' && onNavigateFunnels && (
+                    <button
+                      onClick={onNavigateFunnels}
+                      className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#00E599] to-[#38bdf8] hover:opacity-95 text-[#080E21] font-extrabold text-xs sm:text-sm shadow-lg shadow-[#00E599]/20 transition-all flex items-center justify-center gap-2 cursor-pointer font-heading active:scale-[0.99]"
+                    >
+                      <Sparkles className="w-4 h-4 shrink-0 text-[#080E21]" />
+                      <span>Try 3 Live Fast Track Funnels (Quiz, Calc & Wheel) →</span>
+                    </button>
+                  )}
+
+                  {/* Special ZeroDown Site CTA */}
+                  {product.id === 'zero-down-site' ? (
+                    <button
+                      id={`products-page-claim-site-btn`}
+                      onClick={onOpenFreeWebsite}
+                      className="w-full py-3 px-4 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
+                    >
+                      <Globe className="w-4 h-4 shrink-0" />
+                      <span>Claim ZeroDown Site ($0 Build)</span>
+                    </button>
+                  ) : product.checkoutUrl ? (
                     <a
                       id={`products-page-checkout-${product.id}`}
                       href={product.checkoutUrl}
@@ -310,26 +388,29 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                       <span>Get Started Now</span>
                       <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform shrink-0" />
                     </a>
-                  ) : (
+                  ) : product.id !== 'interactive-funnel' ? (
                     <button
                       id={`products-page-bundle-cta-${product.id}`}
                       onClick={() => onOpenBookCallWithProduct(product.name)}
                       className="w-full py-3 px-4 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
                     >
                       <Sparkles className="w-4 h-4 shrink-0" />
-                      <span>Get Bundle Package ($897 + $399/mo)</span>
+                      <span>{product.id === 'ai-employee' ? 'Get The New Hire ($897 + $399/mo)' : `Get ${product.name} • ${product.startingPrice}`}</span>
                     </button>
-                  )}
+                  ) : null}
 
                   {/* Secondary: Book Call */}
-                  <button
+                  <a
                     id={`products-page-book-call-${product.id}`}
+                    href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => onOpenBookCallWithProduct(product.name)}
                     className="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <PhoneCall className="w-3.5 h-3.5 text-[#00E599]" />
-                    <span>Book 15-Min Strategy Call</span>
-                  </button>
+                    <span>Schedule 15-Min Strategy Call</span>
+                  </a>
 
                   {/* Tertiary: View Detail Breakdown */}
                   <button
@@ -344,6 +425,31 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
             );
           })}
         </div>
+
+        {/* The Fast Track Showcase Spotlight Banner */}
+        {onNavigateFunnels && (
+          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#0c142b] via-[#102047] to-[#0c142b] border-2 border-[#00E599]/30 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-left max-w-2xl">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-[#00E599] bg-[#00E599]/10 border border-[#00E599]/20 uppercase tracking-wide">
+                <Sparkles className="w-3.5 h-3.5" />
+                Featured Product Deep-Dive
+              </div>
+              <h3 className="text-xl sm:text-2xl font-extrabold font-heading text-white">
+                Explore The Fast Track Showcase
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300">
+                Test 3 fully working, live pre-qualification flows: Diagnostic Quizzes, Smart ROI Calculators, and Gamified Prize Wheels. See why they outperform static contact forms by 3.8x.
+              </p>
+            </div>
+            <button
+              onClick={onNavigateFunnels}
+              className="px-6 py-3.5 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-extrabold text-xs sm:text-sm shadow-lg shadow-[#00E599]/20 transition-all flex items-center gap-2 cursor-pointer font-heading shrink-0 active:scale-[0.99]"
+            >
+              <span>Test Working Demos Now</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
 
         {/* 3-Step Simple Onboarding Flow */}
         <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#0D152F] to-[#15224A] border border-white/15 shadow-2xl relative overflow-hidden">
@@ -377,7 +483,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               </div>
               <h3 className="font-heading font-bold text-white text-base">Trade & Voice Training</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                We configure your AI receptionist with your pricing rules, service areas, diagnostic fees, and calendar booking link.
+                We configure The New Hire with your pricing rules, service areas, diagnostic fees, and calendar booking link.
               </p>
             </div>
 
@@ -387,7 +493,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               </div>
               <h3 className="font-heading font-bold text-white text-base">Go Live & Capture Leads</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Turn on live call forwarding or embed your smart chatbot widget. Start capturing 100% of missed calls and web visitors 24/7.
+                Turn on live call forwarding and embed your website live chat. Start capturing 100% of missed calls and web visitors 24/7.
               </p>
             </div>
           </div>
@@ -405,13 +511,16 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <button
+            <a
+              href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => onOpenBookCallWithProduct('General Strategy Call')}
               className="px-6 py-3.5 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs sm:text-sm shadow-lg shadow-[#00E599]/25 transition-all cursor-pointer font-heading flex items-center gap-2"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>Book Strategy Call</span>
-            </button>
+              <span>Schedule 15-Min Strategy Call</span>
+            </a>
             <button
               onClick={onOpenFreeWebsite}
               className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs sm:text-sm border border-white/15 transition-all cursor-pointer"

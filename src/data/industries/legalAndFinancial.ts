@@ -33,7 +33,7 @@ export const LEGAL_AND_FINANCIAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Pre-screens statute of limitations, injury severity, and insurance policy limits.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Law Firms',
+        title: '5-Star Engine for Law Firms',
         howItWorks: 'Sends a personalized review prompt when a favorable settlement check is disbursed and the client’s medical bills are resolved.',
         industryBenefit: 'Builds an unassailable 5-star reputation on Google Maps for competitive legal search terms.',
         sampleAction: 'Encourages clients to share how your firm protected their family during a difficult recovery.',
@@ -129,7 +129,7 @@ export const LEGAL_AND_FINANCIAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Identifies first-time vs repeat offenses and county court jurisdictions.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Defense Lawyers',
+        title: '5-Star Engine for Defense Lawyers',
         howItWorks: 'Sends discreet review requests after charges are dismissed, reduced, or successfully resolved in court.',
         industryBenefit: 'Builds a stellar reputation on Google Maps for local DUI and criminal defense searches.',
         sampleAction: 'Gives grateful clients an easy way to thank your firm for protecting their freedom and clean record.',
@@ -213,7 +213,7 @@ export const LEGAL_AND_FINANCIAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Features practice areas for High-Net-Worth Divorce, Child Custody & Support, Spousal Maintenance, and Prenuptial Agreements.',
       },
       aiReceptionist: {
-        title: '24/7 Discrete Family Law Intake Receptionist',
+        title: '24/7 Discrete Family Law Intake (NeverMiss)',
         howItWorks: 'Listens with compassion, checks for opposing party conflict of interest, and books confidential initial consultations.',
         industryBenefit: 'Secures high-retainer divorce and custody cases while you are in court.',
         sampleAction: '“Attorney Sarah Jenkins understands how overwhelming custody decisions can be. She has consultation openings this Thursday at 11:00 AM or Friday at 2:00 PM.”',
@@ -321,7 +321,7 @@ export const LEGAL_AND_FINANCIAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Prequalifies property square footage, acreage, and report turnaround urgency.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Appraisers',
+        title: '5-Star Engine for Appraisers',
         howItWorks: 'Sends a polite review request when the completed USPAP-compliant appraisal report PDF is delivered to the client.',
         industryBenefit: 'Establishes your appraisal firm as the #1 ranked valuation authority on Google Maps.',
         sampleAction: 'Encourages attorneys and homeowners to leave glowing feedback on your punctuality and report clarity.',
@@ -417,7 +417,7 @@ export const LEGAL_AND_FINANCIAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Collects property address, renovation upgrades, and seller timeline in seconds.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Realtors',
+        title: '5-Star Engine for Realtors',
         howItWorks: 'Sends an automated review prompt on closing day when the keys are handed over and the buyer or seller is celebrating.',
         industryBenefit: 'Builds an unstoppable 5-star Google Maps presence that attracts organic luxury listings.',
         sampleAction: 'Invites happy clients to upload closing-day photos in front of their new home to your Google profile.',
@@ -609,7 +609,7 @@ export const LEGAL_AND_FINANCIAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Prequalifies gross annual revenue ($100k, $500k, $2M+) and industry type.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for CPAs',
+        title: '5-Star Engine for CPAs',
         howItWorks: 'Sends automated review prompts after a successful tax filing where the client saved thousands in legal deductions.',
         industryBenefit: 'Builds a 5-star reputation on Google Maps that dominates local accounting searches.',
         sampleAction: 'Encourages business owners to praise your proactive tax savings advice and responsiveness.',

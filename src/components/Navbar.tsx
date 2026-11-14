@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles, Menu, X, ArrowRight, MessageSquare, Calculator, CheckSquare, Layers } from 'lucide-react';
 
 interface NavbarProps {
-  currentView?: 'home' | 'products' | 'industry' | 'sms-opt-in' | 'privacy' | 'terms' | 'about' | 'contact';
+  currentView?: 'home' | 'products' | 'industry' | 'sms-opt-in' | 'privacy' | 'terms' | 'about' | 'contact' | 'funnels';
   activeIndustryName?: string;
   onOpenFreeWebsite: () => void;
   onOpenBookCall: () => void;
@@ -13,6 +13,7 @@ interface NavbarProps {
   onNavigateAbout?: () => void;
   onNavigateContact?: () => void;
   onNavigateSmsOptIn: () => void;
+  onNavigateFunnels?: () => void;
   onScrollTo: (elementId: string) => void;
 }
 
@@ -23,6 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavigateHome,
   onNavigateProducts,
   onNavigateSmsOptIn,
+  onNavigateFunnels,
   onScrollTo,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -116,6 +118,24 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>AI Products</span>
           </button>
 
+          {onNavigateFunnels && (
+            <button
+              id="nav-link-funnels"
+              onClick={() => {
+                onNavigateFunnels();
+                setMobileMenuOpen(false);
+              }}
+              className={`hover:text-[#00E599] transition-colors cursor-pointer flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg ${
+                currentView === 'funnels'
+                  ? 'text-[#00E599] bg-[#00E599]/10 border border-[#00E599]/30 font-semibold'
+                  : 'text-slate-300 hover:bg-white/5'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 text-[#00E599]" />
+              <span>The Fast Track</span>
+            </button>
+          )}
+
           {/* SMS Opt-In */}
           <button
             id="nav-link-sms-optin"
@@ -136,19 +156,22 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
-          <button
+          <a
             id="nav-book-call-btn"
+            href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={onOpenBookCall}
-            className="px-4 py-2 text-sm font-semibold text-slate-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all cursor-pointer"
+            className="px-4 py-2 text-sm font-semibold text-slate-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all cursor-pointer flex items-center justify-center"
           >
-            Book 15-Min Call
-          </button>
+            Schedule 15-Min Call
+          </a>
           <button
             id="nav-claim-free-btn"
             onClick={onOpenFreeWebsite}
             className="px-5 py-2.5 text-sm font-bold text-[#080E21] bg-[#00E599] hover:bg-[#34D399] rounded-lg shadow-md shadow-[#00E599]/20 transition-all flex items-center gap-2 cursor-pointer hover:shadow-lg hover:shadow-[#00E599]/30 transform active:scale-95"
           >
-            <span>Claim $0 Website</span>
+            <span>ZeroDown Site ($0)</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -198,6 +221,24 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>AI Products & Pricing Catalog</span>
             </button>
 
+            {onNavigateFunnels && (
+              <button
+                id="mobile-nav-funnels-btn"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onNavigateFunnels();
+                }}
+                className={`text-left py-2 px-3 rounded-lg flex items-center gap-2.5 ${
+                  currentView === 'funnels'
+                    ? 'bg-[#00E599]/15 text-[#00E599] font-bold border border-[#00E599]/30'
+                    : 'hover:bg-white/5 text-slate-200'
+                }`}
+              >
+                <Sparkles className="w-4 h-4 text-[#00E599]" />
+                <span>The Fast Track</span>
+              </button>
+            )}
+
             {/* Mobile SMS Opt-In Link */}
             <button
               id="mobile-nav-sms-optin"
@@ -213,15 +254,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <div className="pt-4 border-t border-white/10 flex flex-col gap-2.5">
-            <button
+            <a
+              href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenBookCall();
               }}
-              className="w-full py-3 text-center text-sm font-semibold text-white bg-white/10 hover:bg-white/15 rounded-xl border border-white/15 cursor-pointer"
+              className="w-full py-3 text-center text-sm font-semibold text-white bg-white/10 hover:bg-white/15 rounded-xl border border-white/15 cursor-pointer flex items-center justify-center"
             >
-              Book 15-Minute Strategy Call
-            </button>
+              Schedule 15-Min Strategy Call
+            </a>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
@@ -229,7 +273,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }}
               className="w-full py-3.5 text-center text-sm font-bold text-[#080E21] bg-[#00E599] hover:bg-[#34D399] rounded-xl shadow-lg shadow-[#00E599]/25 cursor-pointer font-heading"
             >
-              Claim Your $0 Website Build
+              Claim Your ZeroDown Site ($0 Build)
             </button>
           </div>
         </div>

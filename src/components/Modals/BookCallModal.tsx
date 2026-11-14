@@ -7,14 +7,21 @@ interface BookCallModalProps {
   onClose: () => void;
   initialProductInterest?: string;
   initialRoiSummary?: string;
+  bookingUrl?: string;
 }
 
 export const BookCallModal: React.FC<BookCallModalProps> = ({
   isOpen,
   onClose,
-  initialProductInterest = 'General AI Implementation & Free Website',
+  initialProductInterest = 'General AI Implementation & ZeroDown Site',
   initialRoiSummary = '',
+  bookingUrl,
 }) => {
+  const activeBookingUrl = bookingUrl || (
+    initialRoiSummary || initialProductInterest?.toLowerCase().includes('revenue leak')
+      ? 'https://api.leadconnectorhq.com/widget/booking/4q93oCzmF1smxkIJhnoO'
+      : 'https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf'
+  );
   const [formData, setFormData] = useState<BookCallFormData>({
     name: '',
     businessName: '',
@@ -66,6 +73,8 @@ export const BookCallModal: React.FC<BookCallModalProps> = ({
       if (res.ok && data.success) {
         setConfirmed(true);
         setBookingRef(data.bookingId);
+        // Automatically open LeadConnector calendar widget
+        window.open(activeBookingUrl, '_blank');
       } else {
         setErrorMsg(data.error || 'Failed to book call.');
       }
@@ -298,12 +307,23 @@ export const BookCallModal: React.FC<BookCallModalProps> = ({
               </div>
             </div>
 
-            <button
-              onClick={onClose}
-              className="px-6 py-2.5 rounded-xl bg-[#00E599] text-[#080E21] font-bold text-xs font-heading cursor-pointer"
-            >
-              Done / Return to Site
-            </button>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+              <a
+                href={activeBookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs font-heading flex items-center justify-center gap-1.5 transition-all"
+              >
+                <span>Pick Exact Time on Live Calendar</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+              <button
+                onClick={onClose}
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs font-heading cursor-pointer transition-all"
+              >
+                Close
+              </button>
+            </div>
           </div>
         )}
       </div>

@@ -80,7 +80,7 @@ export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({
               <span>Services Overview</span>
             </h2>
             <p>
-              Ecentra Concierge provides local business automation software, telephone AI receptionists, smart chat widgets, review generation software, and web development solutions designed specifically for home service contractors, trade operators, medical/wellness practices, and professional service firms.
+              Ecentra Concierge provides local business automation software, telephone voice answering (NeverMiss), website live chat (LeadCatch), review generation software (5-Star Engine), appointment setting (BookedSolid), and web development solutions (ZeroDown Site) designed specifically for home service contractors, trade operators, medical/wellness practices, and professional service firms.
             </p>
           </div>
 
@@ -152,7 +152,7 @@ export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({
               <span>Billing, Payments & 30-Day Guarantee</span>
             </h2>
             <p>
-              Software subscriptions (AI Receptionist, Chatbot, Review Automator) and Cloud Hosting plans ($97/mo) are billed recurringly on a monthly cycle. We offer a 30-day zero-risk trial on AI concierge services—if you are unsatisfied within the first 30 days of active service, you may cancel without penalty.
+              Software subscriptions (NeverMiss, LeadCatch, 5-Star Engine, BookedSolid, The Fast Track, The New Hire) and ZeroDown Site Cloud Hosting plans ($97/mo) are billed recurringly on a monthly cycle. We offer a 30-day zero-risk trial on AI concierge services—if you are unsatisfied within the first 30 days of active service, you may cancel without penalty.
             </p>
           </div>
 

@@ -258,14 +258,17 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
             {/* Primary Action Button */}
             <div className="pt-6">
-              <button
+              <a
                 id="calc-plug-leak-btn"
+                href="https://api.leadconnectorhq.com/widget/booking/4q93oCzmF1smxkIJhnoO"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={handleCtaClick}
                 className="w-full py-3.5 px-4 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold font-heading text-base shadow-lg shadow-[#00E599]/25 hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Plug This Revenue Leak</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
               <div className="text-center text-[11px] text-slate-400 mt-2">
                 Zero live checkout • 15-minute tailored game plan
               </div>

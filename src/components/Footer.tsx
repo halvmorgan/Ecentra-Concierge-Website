@@ -15,6 +15,7 @@ interface FooterProps {
   onNavigatePrivacy: () => void;
   onNavigateTerms: () => void;
   onNavigateSmsOptIn?: () => void;
+  onNavigateFunnels?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -29,6 +30,7 @@ export const Footer: React.FC<FooterProps> = ({
   onNavigateContact,
   onNavigatePrivacy,
   onNavigateTerms,
+  onNavigateFunnels,
 }) => {
   const [quickPhone, setQuickPhone] = useState('');
   const [quickBiz, setQuickBiz] = useState('');
@@ -231,7 +233,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              The AI receptionist, review automator, and modern website engine engineered specifically for local home, health, trade, and professional service operators.
+              The 24/7 NeverMiss answering, 5-Star Engine, and ZeroDown Site engine engineered specifically for local home, health, trade, and professional service operators.
             </p>
             <div className="text-xs text-slate-400 space-y-1.5">
               <div className="flex items-center gap-1.5 text-slate-300">
@@ -275,7 +277,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenFreeWebsite}
                   className="hover:text-[#00E599] transition-colors text-left cursor-pointer"
                 >
-                  Free Website Offer ($0)
+                  ZeroDown Site ($0 Build)
                 </button>
               </li>
               <li>
@@ -309,6 +311,18 @@ export const Footer: React.FC<FooterProps> = ({
                   AI Product Menu & Pricing
                 </button>
               </li>
+              {onNavigateFunnels && (
+                <li>
+                  <button
+                    id="footer-link-funnels"
+                    onClick={onNavigateFunnels}
+                    className="text-[#00E599] font-semibold hover:underline transition-colors text-left cursor-pointer flex items-center gap-1.5"
+                  >
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>The Fast Track</span>
+                  </button>
+                </li>
+              )}
               <li>
                 <button
                   id="footer-link-privacy"

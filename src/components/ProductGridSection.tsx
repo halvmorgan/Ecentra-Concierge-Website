@@ -54,9 +54,13 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
   const filteredProducts = filterCategory === 'all'
     ? PRODUCTS
     : PRODUCTS.filter((p) => {
-        if (filterCategory === 'core') return p.id === 'ai-employee' || p.id === 'ai-receptionist' || p.id === 'ai-chatbot';
-        if (filterCategory === 'growth') return p.id === 'review-automator' || p.id === 'interactive-funnel';
-        if (filterCategory === 'messaging') return p.id === 'ai-chatbot' || p.id === 'appointment-setter';
+        if (filterCategory === 'leadcatch') return p.id === 'ai-chatbot';
+        if (filterCategory === 'nevermiss') return p.id === 'ai-receptionist';
+        if (filterCategory === 'zerodown') return p.id === 'zero-down-site';
+        if (filterCategory === 'employee') return p.id === 'ai-employee';
+        if (filterCategory === 'fasttrack') return p.id === 'interactive-funnel';
+        if (filterCategory === 'fivestar') return p.id === 'review-automator';
+        if (filterCategory === 'automation') return p.id === 'appointment-setter';
         return true;
       });
 
@@ -67,13 +71,13 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E599]/10 border border-[#00E599]/30 text-xs font-bold text-[#00E599] mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Direct Pricing & Modular Catalog</span>
+            <span>Direct Pricing & AI Suite</span>
           </div>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             AI-Powered Services Built for Local Trades
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-300">
-            Choose your individual service or bundle Phone & Web Chatbot together for maximum savings. Instant Stripe checkout and transparent onboarding.
+            Deploy LeadCatch, NeverMiss, ZeroDown Site, The New Hire, The Fast Track, 5-Star Engine, and BookedSolid. Instant Stripe checkout and transparent onboarding.
           </p>
 
           {/* Filter Pills */}
@@ -86,42 +90,82 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
                   : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
               }`}
             >
-              All 6 Services
+              All Products ({PRODUCTS.length})
             </button>
             <button
-              onClick={() => setFilterCategory('core')}
+              onClick={() => setFilterCategory('leadcatch')}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
-                filterCategory === 'core'
+                filterCategory === 'leadcatch'
                   ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold'
                   : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
               }`}
             >
-              Core Offers (Phone & Chatbot)
+              LeadCatch
             </button>
             <button
-              onClick={() => setFilterCategory('messaging')}
+              onClick={() => setFilterCategory('nevermiss')}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
-                filterCategory === 'messaging'
+                filterCategory === 'nevermiss'
                   ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold'
                   : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
               }`}
             >
-              Web Chat & SMS Setter
+              NeverMiss
             </button>
             <button
-              onClick={() => setFilterCategory('growth')}
+              onClick={() => setFilterCategory('zerodown')}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
-                filterCategory === 'growth'
+                filterCategory === 'zerodown'
                   ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold'
                   : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
               }`}
             >
-              Google Reviews & Funnels
+              ZeroDown Site
+            </button>
+            <button
+              onClick={() => setFilterCategory('employee')}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
+                filterCategory === 'employee'
+                  ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold'
+                  : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
+              }`}
+            >
+              The New Hire
+            </button>
+            <button
+              onClick={() => setFilterCategory('fasttrack')}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
+                filterCategory === 'fasttrack'
+                  ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold'
+                  : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
+              }`}
+            >
+              The Fast Track
+            </button>
+            <button
+              onClick={() => setFilterCategory('fivestar')}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
+                filterCategory === 'fivestar'
+                  ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold'
+                  : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
+              }`}
+            >
+              5-Star Engine
+            </button>
+            <button
+              onClick={() => setFilterCategory('automation')}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
+                filterCategory === 'automation'
+                  ? 'bg-[#00E599] text-[#080E21] border-[#00E599] font-bold'
+                  : 'bg-white/5 text-slate-300 border-white/10 hover:bg-white/10'
+              }`}
+            >
+              BookedSolid
             </button>
           </div>
         </div>
 
-        {/* 6 Products Grid */}
+        {/* 4 Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => {
             const isFeatured = Boolean(product.featuredBadge);
@@ -195,8 +239,17 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
 
                 {/* Card Footer CTAs */}
                 <div className="pt-4 border-t border-white/10 space-y-2.5">
-                  {/* Direct Stripe Buy Button */}
-                  {product.checkoutUrl ? (
+                  {/* Direct Action Button */}
+                  {product.id === 'zero-down-site' ? (
+                    <button
+                      id={`product-claim-${product.id}`}
+                      onClick={onOpenFreeWebsite}
+                      className="w-full py-3 px-4 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
+                    >
+                      <Globe className="w-4 h-4 shrink-0" />
+                      <span>Claim ZeroDown Site ($0 Build)</span>
+                    </button>
+                  ) : product.checkoutUrl ? (
                     <a
                       id={`product-checkout-${product.id}`}
                       href={product.checkoutUrl}
@@ -215,19 +268,22 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
                       className="w-full py-3 px-4 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
                     >
                       <Sparkles className="w-4 h-4 shrink-0" />
-                      <span>Get Bundle Package ($897 + $399/mo)</span>
+                      <span>{product.id === 'ai-employee' ? 'Get The New Hire ($897 + $399/mo)' : `Get ${product.name} • ${product.startingPrice}`}</span>
                     </button>
                   )}
 
                   {/* Secondary: Book Call */}
-                  <button
+                  <a
                     id={`product-book-call-${product.id}`}
+                    href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => onOpenBookCallWithProduct(product.name)}
                     className="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <span>Questions? Book Strategy Call</span>
+                    <span>Schedule 15-Min Strategy Call</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </a>
 
                   {/* Tertiary: View Detail */}
                   <button

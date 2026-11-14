@@ -578,8 +578,11 @@ export const QuizSection: React.FC<QuizSectionProps> = ({
                         <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform shrink-0" />
                       </a>
                     )}
-                    <button
+                    <a
                       id="quiz-result-book-primary-btn"
+                      href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() =>
                         onOpenBookCallWithProduct?.(
                           `${resultData.primary.name} (Quiz Diagnosis: ${resultData.industryName}, ~${activeTier?.callsPerWeek || 2} missed calls/wk)`
@@ -588,14 +591,14 @@ export const QuizSection: React.FC<QuizSectionProps> = ({
                       className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/10 transition-all flex items-center gap-2 cursor-pointer"
                     >
                       <Calendar className="w-4 h-4" />
-                      <span>Schedule Strategy Call</span>
-                    </button>
+                      <span>Schedule 15-Min Strategy Call</span>
+                    </a>
                     {resultData.primary.id === 'free-website' && (
                       <button
                         onClick={onOpenFreeWebsite}
                         className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/10 transition-all cursor-pointer"
                       >
-                        Claim Free Website ($0)
+                        Claim ZeroDown Site ($0 Build)
                       </button>
                     )}
                   </div>
@@ -618,17 +621,20 @@ export const QuizSection: React.FC<QuizSectionProps> = ({
                         </span>
                       </div>
                     </div>
-                    <button
+                    <a
                       id="quiz-result-secondary-btn"
+                      href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() =>
                         onOpenBookCallWithProduct?.(
-                          `${resultData.primary.name} + ${resultData.secondary.name}`
+                          `${resultData.primary.name} + ${resultData.secondary?.name}`
                         )
                       }
                       className="px-4 py-2 text-xs font-bold text-slate-200 hover:text-white bg-white/10 hover:bg-white/20 border border-white/15 rounded-lg transition-all shrink-0 cursor-pointer"
                     >
-                      Include in Strategy Call →
-                    </button>
+                      Schedule 15-Min Call →
+                    </a>
                   </div>
                 )}
               </div>

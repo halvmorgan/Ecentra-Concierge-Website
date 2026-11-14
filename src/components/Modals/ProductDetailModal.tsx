@@ -139,11 +139,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
                 >
                   <Sparkles className="w-4 h-4 shrink-0" />
-                  <span>Get Bundle Package • {product.startingPrice}</span>
+                  <span>{product.id === 'ai-employee' ? `Get The New Hire • ${product.startingPrice}` : `Get ${product.name} • ${product.startingPrice}`}</span>
                 </button>
               )}
 
-              <button
+              <a
+                href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   onClose();
                   onOpenBookCallWithProduct(product.name);
@@ -151,8 +154,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 className="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book Strategy Call</span>
-              </button>
+                <span>Schedule 15-Min Strategy Call</span>
+              </a>
             </div>
           </div>
         </div>

@@ -21,19 +21,19 @@ export const HOME_AND_TRADES_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Captures homeowner electric bill uploads and roof photos directly into your CRM.',
       },
       aiReceptionist: {
-        title: '24/7 Solar Sales & Intake Receptionist',
+        title: '24/7 Solar Sales & Intake (NeverMiss)',
         howItWorks: 'Answers inquiries instantly, pre-qualifies roof ownership and monthly electric spend, and books site assessments on your calendar.',
         industryBenefit: 'Never miss an evening or weekend inquiry from homeowners reviewing their electric bills at the kitchen table.',
         sampleAction: '“I see your average summer bill is around $340. We can send a solar designer this Thursday at 5:30 PM for a 15-minute roof scan.”',
       },
       aiChatbot: {
-        title: 'Instant Solar Savings Estimator Chatbot',
+        title: 'Instant Solar Savings Estimator (LeadCatch)',
         howItWorks: 'Engages website visitors with a live utility savings estimator that calculates federal tax credit eligibility in 30 seconds.',
         industryBenefit: 'Converts casual website browsers into qualified booked site surveys before they click back to Google search.',
         sampleAction: 'Calculates estimated 25-year net savings and collects verified mobile numbers for system design previews.',
       },
       reviewAutomator: {
-        title: 'Post-PTO 5-Star Google Review Automator',
+        title: 'Post-PTO 5-Star Engine',
         howItWorks: 'Triggers automated review requests when Permission to Operate (PTO) is granted and the customer sees their meter spin backwards.',
         industryBenefit: 'Dominates the Google Maps 3-Pack for local search queries like "best solar installer near me".',
         sampleAction: 'Sends a personalized SMS prompt asking homeowners to share photos of their new clean rooftop panels on Google.',
@@ -321,7 +321,7 @@ export const HOME_AND_TRADES_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Pre-screens termite vs carpenter ant signs and quotes standard inspection pricing.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Exterminators',
+        title: '5-Star Engine for Exterminators',
         howItWorks: 'Sends automated SMS review requests 24 hours after treatment when pests are cleared and peace of mind is restored.',
         industryBenefit: 'Floods your Google Business Profile with verified 5-star reviews praising your speed and thoroughness.',
         sampleAction: 'Encourages satisfied customers to mention the technician by name in their glowing review.',
@@ -417,7 +417,7 @@ export const HOME_AND_TRADES_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Pre-qualifies door material (steel, wood, glass) and opener type (chain, belt, smart WiFi).',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Door Techs',
+        title: '5-Star Engine for Door Techs',
         howItWorks: 'Texts customer right after the new springs are balanced and the door rolls silently.',
         industryBenefit: 'Builds an unstoppable 5-star reputation on Google Maps across your entire metro area.',
         sampleAction: 'Prompts the customer to rate the speed and professionalism of the technician.',
@@ -513,7 +513,7 @@ export const HOME_AND_TRADES_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Collects door count and key type for accurate commercial rekeying proposals.',
       },
       reviewAutomator: {
-        title: 'Instant 5-Star Google Review Automator',
+        title: 'Instant 5-Star Engine',
         howItWorks: 'Sends a polite SMS review request the moment the customer is safely back inside their vehicle or home.',
         industryBenefit: 'Accumulates hundreds of 5-star reviews on Google Maps, cementing your top-ranked local position.',
         sampleAction: 'Leverages the immense customer relief of being unlocked to generate glowing Google ratings.',
@@ -609,7 +609,7 @@ export const HOME_AND_TRADES_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Collects insurance carrier name, policy number, and affected room count automatically.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Restoration',
+        title: '5-Star Engine for Restoration',
         howItWorks: 'Sends timed review requests after the property is dried, sanitized, and signed off by the insurance adjuster.',
         industryBenefit: 'Ranks your restoration business above franchise conglomerates in local Google Maps search.',
         sampleAction: 'Captures emotional 5-star testimonials from relieved homeowners whose homes were saved from mold.',
@@ -693,7 +693,7 @@ export const HOME_AND_TRADES_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Features clear symptom selectors for Brakes, Check Engine Lights, AC Repair, and Factory Scheduled Maintenance.',
       },
       aiReceptionist: {
-        title: '24/7 Auto Repair Shop Phone Receptionist',
+        title: '24/7 Auto Repair Shop Phone Answering (NeverMiss)',
         howItWorks: 'Gathers vehicle year, make, model, engine size, and symptoms; explains diagnostic procedures; and schedules drop-off slots.',
         industryBenefit: 'Ends phone tag and fills morning drop-off slots before your shop opens.',
         sampleAction: '“We can perform a complete computer diagnostic on your 2018 Honda Accord tomorrow at 8:00 AM. Would you like to drop it off in our night key box tonight?”',
@@ -705,7 +705,7 @@ export const HOME_AND_TRADES_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Quotes standard maintenance packages (synthetic oil, brake pad replacement, coolant flush).',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Auto Shops',
+        title: '5-Star Engine for Auto Shops',
         howItWorks: 'Sends automated SMS review request when the customer picks up their freshly repaired vehicle and pays their invoice.',
         industryBenefit: 'Builds a dominant Google Maps rating that outperforms franchise repair chains.',
         sampleAction: 'Asks satisfied drivers to leave a quick 5-star review while their car is running smoothly.',
@@ -801,7 +801,7 @@ export const HOME_AND_TRADES_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Collects home age, room dimensions, and Pinterest/Houzz inspiration links.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Builders',
+        title: '5-Star Engine for Builders',
         howItWorks: 'Sends automated review requests at the final project walkthrough when the homeowner is thrilled with their dream space.',
         industryBenefit: 'Builds an unmatched portfolio of verified 5-star Google reviews showcasing your craftsmanship.',
         sampleAction: 'Prompts homeowners to upload photos of their brand-new kitchen directly to your Google Business Profile.',

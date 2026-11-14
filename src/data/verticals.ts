@@ -75,7 +75,7 @@ export const PRIMARY_VERTICALS: VerticalProfile[] = [
       'Provides immediate water shutoff safety instructions to panicked callers',
       'Collects exact pipe/fixture details and photographs via instant SMS link',
       'Routes urgent water leak jobs straight to the on-call tech’s mobile phone',
-      'Post-job review automation generates 20+ fresh 5-star Google reviews monthly',
+      '5-Star Engine generates 20+ fresh 5-star Google reviews monthly',
     ],
     testimonial: {
       quote: 'When you are under a house in a crawlspace, you cannot pick up the phone. Ecentra answers every call, gives the caller peace of mind, and puts the job on my schedule with the address and problem description ready to go.',

@@ -129,7 +129,7 @@ export const CREATIVE_AND_PERSONAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Collects reference photo uploads and cover-up requirements automatically.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Tattoo Studios',
+        title: '5-Star Engine for Tattoo Studios',
         howItWorks: 'Sends an automated review prompt 3 days after the session when the tattoo is healing beautifully and the client is showing it off.',
         industryBenefit: 'Floods your Google Maps profile with 5-star reviews and healed tattoo photos.',
         sampleAction: 'Invites happy clients to tag their specific artist in their 5-star review.',
@@ -213,7 +213,7 @@ export const CREATIVE_AND_PERSONAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Features clear program tracks for Kids Martial Arts (Ages 4–7, 8–12), Brazilian Jiu-Jitsu, Muay Thai, and Self-Defense.',
       },
       aiReceptionist: {
-        title: '24/7 Academy Phone Receptionist & Class Scheduler',
+        title: '24/7 Academy Phone Intake & Class Scheduler (NeverMiss)',
         howItWorks: 'Answers questions about age groups, uniform/gi requirements, class times, and safety; books free intro trial lessons.',
         industryBenefit: 'Ensures the phone is answered 100% of the time while instructors are teaching on the mats.',
         sampleAction: '“Our Kids BJJ Beginner Intro is this Tuesday at 4:30 PM. We provide a loaner uniform for their first class. Let’s get your child’s name and age to reserve their spot!”',
@@ -225,7 +225,7 @@ export const CREATIVE_AND_PERSONAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Collects child age, prior experience, and schedules the exact intro class time.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Academies',
+        title: '5-Star Engine for Academies',
         howItWorks: 'Sends automated review requests when a student earns their first belt stripe or graduates to the next rank.',
         industryBenefit: 'Builds an overwhelming 5-star reputation on Google Maps for local martial arts searches.',
         sampleAction: 'Encourages proud parents to share photos of their child holding their new belt.',
@@ -321,7 +321,7 @@ export const CREATIVE_AND_PERSONAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Prequalifies grade level (K-5, 6-8, 9-12) and standardized test dates.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Tutoring',
+        title: '5-Star Engine for Tutoring',
         howItWorks: 'Sends an automated review prompt when a student receives an "A" on their report card or achieves their target SAT/ACT score.',
         industryBenefit: 'Builds an undeniable 5-star reputation on Google Maps for local tutoring searches.',
         sampleAction: 'Encourages parents to celebrate their student’s score improvements on your Google profile.',
@@ -609,7 +609,7 @@ export const CREATIVE_AND_PERSONAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Prequalifies color history and extension maintenance expectations.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Salons',
+        title: '5-Star Engine for Salons',
         howItWorks: 'Sends a complimentary review text 2 hours after the fresh blowout while the client is taking selfies in their car.',
         industryBenefit: 'Pushes your salon to the #1 ranked spot on Google Maps for local hair salon searches.',
         sampleAction: 'Invites delighted clients to upload their salon selfie directly to your Google profile.',
@@ -705,7 +705,7 @@ export const CREATIVE_AND_PERSONAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Prequalifies care timelines (immediate hospital discharge vs planning 6 months ahead).',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Senior Communities',
+        title: '5-Star Engine for Senior Communities',
         howItWorks: 'Sends gentle review prompts to family members 30 days after move-in when their parent is thriving and making new friends.',
         industryBenefit: 'Establishes your community as the highest-rated, most trusted senior care provider in the region.',
         sampleAction: 'Encourages families to praise your dedicated caregivers and welcoming environment.',
@@ -801,7 +801,7 @@ export const CREATIVE_AND_PERSONAL_INDUSTRIES: IndustryLandingData[] = [
         sampleAction: 'Pre-screens burial vs cremation preferences and pre-need funding options.',
       },
       reviewAutomator: {
-        title: '5-Star Google Review Automator for Funeral Homes',
+        title: '5-Star Engine for Funeral Homes',
         howItWorks: 'Sends a gentle, respectful note 30 days after the service thanking the family for trusting your funeral home with their loved one.',
         industryBenefit: 'Builds an unassailable reputation of trust and community reverence on Google Maps.',
         sampleAction: 'Allows grateful families to express their appreciation for your staff’s dignity and care.',

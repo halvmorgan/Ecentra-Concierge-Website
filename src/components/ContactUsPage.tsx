@@ -140,7 +140,7 @@ export const ContactUsPage: React.FC<ContactUsPageProps> = ({
             Contact Ecentra Concierge
           </h1>
           <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
-            Have questions about our $0 foundational starter website offer, 24/7 AI Receptionist setup, or custom integration for your trade? We respond to every inquiry promptly.
+            Have questions about our ZeroDown Site ($0 build), NeverMiss 24/7 answering, or custom integration for your trade? We respond to every inquiry promptly.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export const ContactUsPage: React.FC<ContactUsPageProps> = ({
                     <a href="tel:8102020440" className="text-slate-300 hover:text-[#00E599] font-mono mt-0.5 block font-bold">
                       810-202-0440
                     </a>
-                    <div className="text-[11px] text-[#00E599] mt-0.5">Live 24/7 AI Receptionist Active</div>
+                    <div className="text-[11px] text-[#00E599] mt-0.5">NeverMiss 24/7 Answering Active</div>
                   </div>
                 </div>
 
@@ -225,16 +225,19 @@ export const ContactUsPage: React.FC<ContactUsPageProps> = ({
                 Book a 15-Minute Live Strategy Call
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Pick a convenient time on Harold's calendar to review your missed-call volume, audit your current website, and see an AI receptionist test for your exact trade.
+                Pick a convenient time on Harold's calendar to review your missed-call volume, audit your current website, and see a NeverMiss live voice test for your exact trade.
               </p>
-              <button
+              <a
                 id="contact-book-strategy-btn"
+                href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={onOpenBookCall}
                 className="w-full py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs font-heading shadow-md shadow-[#00E599]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>Pick a Time on Calendar</span>
+                <span>Schedule 15-Min Strategy Call</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
 
           </div>
@@ -353,11 +356,13 @@ export const ContactUsPage: React.FC<ContactUsPageProps> = ({
                         onChange={(e) => setTopic(e.target.value)}
                         className="w-full px-3 py-2.5 rounded-xl bg-[#050A18] border border-white/15 text-white text-xs focus:outline-none focus:border-[#00E599]"
                       >
-                        <option value="$0 Foundational Starter Website ($97/mo hosting)">$0 Foundational Starter Website ($97/mo hosting)</option>
-                        <option value="24/7 AI Phone Receptionist Implementation">24/7 AI Phone Receptionist Implementation</option>
-                        <option value="AI Chatbot & Lead Capture Setup">AI Chatbot & Lead Capture Setup</option>
-                        <option value="5-Star Review Automator Engine">5-Star Review Automator Engine</option>
-                        <option value="High-End Custom Multi-Page Website Tier">High-End Custom Multi-Page Website Tier</option>
+                        <option value="ZeroDown Site ($0 Build & $97/mo hosting)">ZeroDown Site ($0 Build & $97/mo hosting)</option>
+                        <option value="NeverMiss (24/7 AI Phone Answering)">NeverMiss (24/7 AI Phone Answering)</option>
+                        <option value="LeadCatch (Smart Website Live Chat)">LeadCatch (Smart Website Live Chat)</option>
+                        <option value="The New Hire (Combo: NeverMiss + LeadCatch)">The New Hire (Combo: NeverMiss + LeadCatch)</option>
+                        <option value="5-Star Engine">5-Star Engine</option>
+                        <option value="BookedSolid">BookedSolid</option>
+                        <option value="The Fast Track">The Fast Track</option>
                         <option value="General Question for Harold Morgan">General Question for Harold Morgan</option>
                       </select>
                     </div>

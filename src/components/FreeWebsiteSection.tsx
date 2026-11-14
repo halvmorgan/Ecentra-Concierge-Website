@@ -82,10 +82,10 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00E599]/10 border border-[#00E599]/30 text-xs font-bold text-[#00E599] mb-3">
             <Globe className="w-3.5 h-3.5" />
-            <span>Zero-Risk Foundational Offer • AI Search Ready</span>
+            <span>ZeroDown Site • $0 Upfront Starter Build • AI Search Ready</span>
           </div>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-            Claim Your $0 Foundational Website Build
+            Claim Your ZeroDown Site ($0 Build + $97/mo Cloud Hosting)
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-300">
             We build you a clean, speed-optimized starter website with <strong className="text-white">$0 upfront design fees</strong>, transparent <strong className="text-[#00E599]">$97/mo cloud hosting</strong>, and <strong className="text-white">built-in optimization for AI Search Engines</strong> like ChatGPT, Claude, Gemini & Google.
@@ -142,7 +142,7 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                 Traditional agencies demand $3,000 to $5,000 upfront just to design a basic local website.
                 <strong className="text-white"> We do the exact opposite:</strong> We eliminate the expensive upfront build cost to give your business an immediate, professional web foundation that turns search traffic into direct phone calls.
                 <span className="block mt-2 text-slate-300">
-                  Our goal is to earn your long-term trust so you choose our 24/7 AI Receptionist, Chatbot, and growth tools as you expand.
+                  Our goal is to earn your long-term trust so you choose NeverMiss, LeadCatch, 5-Star Engine, and growth tools as you expand.
                 </span>
               </p>
             </div>
@@ -151,14 +151,14 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
             <div className="p-6 rounded-3xl bg-gradient-to-br from-[#0D152F] to-[#15224A] border border-white/15 space-y-4">
               <div className="flex items-center gap-2.5 text-sm font-bold text-white">
                 <Sparkles className="w-4 h-4 text-[#00E599]" />
-                <span>Foundational Build vs. Higher-End Custom Upgrade</span>
+                <span>ZeroDown Site vs. Higher-End Custom Upgrade</span>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-[#00E599]/30 space-y-1.5">
                   <div className="font-bold text-[#00E599] flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Included for $0 ($97/mo host):</span>
+                    <span>ZeroDown Site ($0 Build + $97/mo Host):</span>
                   </div>
                   <ul className="text-slate-300 space-y-1 list-disc list-inside text-[11px] leading-relaxed">
                     <li><strong>AI Search Optimization:</strong> ChatGPT, Gemini & Claude</li>
@@ -203,7 +203,7 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Your free website includes zero upfront design charges. To keep your site blazing fast, secure, and always live, it is paired with our <strong>$97/month cloud hosting & maintenance plan</strong>—including enterprise Google Cloud servers, SSL encryption, daily automated backups, AI search index updates, and ongoing security patches.
+                Your ZeroDown Site includes zero upfront design charges. To keep your site blazing fast, secure, and always live, it is paired with our <strong>$97/month cloud hosting & maintenance plan</strong>—including enterprise Google Cloud servers, SSL encryption, daily automated backups, AI search index updates, and ongoing security patches.
               </p>
             </div>
 
@@ -240,14 +240,14 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
                   <div>
                     <h3 className="font-heading text-2xl font-bold text-white">
-                      Free Website Application
+                      ZeroDown Site Application
                     </h3>
                     <p className="text-xs text-slate-400 mt-0.5">
                       $0 Upfront Build • $97/mo Cloud Hosting & Maintenance
                     </p>
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] text-slate-400 uppercase font-semibold">Build Fee</div>
+                    <div className="text-[10px] text-slate-400 uppercase font-semibold">ZeroDown Build</div>
                     <span className="text-xs font-bold text-[#00E599] bg-[#00E599]/10 px-2.5 py-1 rounded-lg border border-[#00E599]/30">
                       $0 Upfront
                     </span>
@@ -398,10 +398,10 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                     className="w-full py-4 px-6 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-extrabold font-heading text-base shadow-lg shadow-[#00E599]/25 hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.99]"
                   >
                     {isSubmitting ? (
-                      <span>Queueing Your Foundational Build...</span>
+                      <span>Queueing Your ZeroDown Site Build...</span>
                     ) : (
                       <>
-                        <span>Claim $0 Starter Build ($97/mo Hosting)</span>
+                        <span>Claim Your ZeroDown Site ($97/mo Hosting)</span>
                         <ArrowRight className="w-5 h-5" />
                       </>
                     )}
@@ -410,7 +410,7 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
 
                 <div className="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
                   <span className="flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> $0 Upfront build
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> ZeroDown Site ($0 Build)
                   </span>
                   <span className="flex items-center gap-1">
                     <Bot className="w-3.5 h-3.5 text-[#00E599]" /> AI Search Optimized (ChatGPT, Gemini, Claude)
@@ -438,7 +438,7 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                     Application Confirmed
                   </span>
                   <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white mt-3">
-                    We’ve Received Your $0 Starter Website Request!
+                    We’ve Received Your ZeroDown Site Request!
                   </h3>
                   <p className="text-slate-300 text-sm mt-2 max-w-md mx-auto">
                     Our trade design team is setting up the foundational build and AI Search schema (ChatGPT, Gemini, Claude) for{' '}
@@ -456,7 +456,7 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">Build Cost:</span>
-                    <span className="font-bold text-[#00E599]">$0 Upfront</span>
+                    <span className="font-bold text-[#00E599]">$0 Upfront (ZeroDown Site)</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">AI Search Readiness:</span>
@@ -477,14 +477,17 @@ export const FreeWebsiteSection: React.FC<FreeWebsiteSectionProps> = ({
                 </div>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <button
+                  <a
                     id="confirmed-book-strategy-btn"
+                    href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={onOpenBookCall}
                     className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
                   >
                     <span>Jump to Front of Line (Book 15-Min Kick-Off)</span>
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </a>
                   <button
                     onClick={() => setIsSubmitted(false)}
                     className="text-xs text-slate-400 hover:text-white underline cursor-pointer"

@@ -107,7 +107,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </div>
 
             <p>
-              We take the same AI-powered tools that transformed my own appraisal business — AI receptionists that never miss a call, chatbots that capture leads while you're on the job, automated review generation, appointment setting, and more — and bring them to HVAC companies, chiropractors, plumbers, tattoo studios, med spas, and other local service businesses who are stretched just as thin as I was.
+              We take the same AI-powered tools that transformed my own appraisal business — The New Hire (answering phone calls and website inquiries 24/7), ZeroDown Site web development, 5-Star Engine review generation, BookedSolid scheduling, and The Fast Track interactive estimators — and bring them to HVAC companies, chiropractors, plumbers, tattoo studios, med spas, and other local service businesses who are stretched just as thin as I was.
             </p>
 
             <p>
@@ -154,7 +154,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               </div>
               <h3 className="font-heading font-bold text-white text-base">Zero Missed Inbound Revenue</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                When you are on a roof, in a crawlspace, or consulting with a patient, our AI concierge answers in 1 ring, qualifies the caller, and logs the appointment into your calendar.
+                When you are on a roof, in a crawlspace, or consulting with a patient, The New Hire answers in 1 ring, qualifies the caller, and logs the appointment into your calendar.
               </p>
             </div>
 
@@ -162,9 +162,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <div className="w-10 h-10 rounded-xl bg-[#00E599]/10 text-[#00E599] flex items-center justify-center">
                 <Building2 className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-white text-base">$0 Starter Website + AI Search</h3>
+              <h3 className="font-heading font-bold text-white text-base">ZeroDown Site ($0 Build + AI Search)</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                We remove the painful $3,000+ agency roadblock with a $0 upfront foundational website—built with rich schema and citations to rank directly in ChatGPT, Claude, Gemini, and Google search.
+                We remove the painful $3,000+ agency roadblock with a $0 upfront ZeroDown Site—built with rich schema and citations to rank directly in ChatGPT, Claude, Gemini, and Google search.
               </p>
             </div>
 
@@ -172,9 +172,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <div className="w-10 h-10 rounded-xl bg-[#00E599]/10 text-[#00E599] flex items-center justify-center">
                 <UserCheck className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-white text-base">No Call Centers or Stiff Bots</h3>
+              <h3 className="font-heading font-bold text-white text-base">The New Hire: No Call Centers or Stiff Bots</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Hyper-realistic, natural voice AI tailored with your business pricing, service zip codes, emergency protocols, and trade-specific vocabulary.
+                Hyper-realistic, natural voice AI and chat tailored with your business pricing, service zip codes, emergency protocols, and trade-specific vocabulary.
               </p>
             </div>
           </div>
@@ -187,7 +187,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               Ready to stop losing jobs to unanswered phones?
             </h2>
             <p className="text-xs text-slate-300">
-              Claim your $0 foundational starter website or test our 24/7 AI Receptionist live on your actual business number.
+              Claim your ZeroDown Site ($0 build) or test NeverMiss 24/7 answering live on your actual business number.
             </p>
           </div>
 
@@ -197,16 +197,19 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               onClick={onOpenFreeWebsite}
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs font-heading shadow-lg shadow-[#00E599]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
-              <span>Claim $0 Foundational Website</span>
+              <span>Claim ZeroDown Site ($0 Build)</span>
               <ArrowRight className="w-4 h-4" />
             </button>
-            <button
+            <a
               id="about-book-call-btn"
+              href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={onOpenBookCall}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs border border-white/15 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs border border-white/15 transition-all cursor-pointer flex items-center justify-center gap-2"
             >
-              Book 15-Min Strategy Call
-            </button>
+              <span>Schedule 15-Min Strategy Call</span>
+            </a>
             <button
               id="about-contact-btn"
               onClick={onNavigateContact}

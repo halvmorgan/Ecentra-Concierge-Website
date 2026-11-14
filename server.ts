@@ -1,10 +1,8 @@
-import express, { Request, Response } from 'express';
+import 'dotenv/config';
+import express from 'express';
+import type { Request, Response } from 'express';
+import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { createServer as createViteServer } from 'vite';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 interface LeadRecord {
   id: string;
@@ -54,12 +52,11 @@ async function forwardToCrmWebhook(lead: LeadRecord) {
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
 
   app.use(express.json());
 
-  // 1. Health check
-  app.get('/api/health', (req: Request, res: Response) => {
+  // 1. Health check endpoints
+  app.get(['/health', '/api/health'], (req: Request, res: Response) => {
     res.json({
       status: 'ok',
       service: 'Ecentra Concierge Platform',
@@ -417,24 +414,91 @@ async function startServer() {
     });
   });
 
-  // Vite middleware for development
-  if (process.env.NODE_ENV !== 'production') {
+  // Vite middleware for development vs static asset serving in production
+  const distPath = path.join(process.cwd(), 'dist');
+  const hasDist = fs.existsSync(path.join(distPath, 'index.html'));
+  const isProduction = process.env.NODE_ENV === 'production' || hasDist || (Boolean(process.argv[1]) && process.argv[1].includes('dist'));
+
+  if (!isProduction) {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
+    // Static assets with content-hashed filenames can be cached long-term
+    app.use('/assets', express.static(path.join(distPath, 'assets'), {
+      maxAge: '1y',
+      immutable: true,
+    }));
+
+    // Other static files (ensuring any html is not cached)
+    app.use(express.static(distPath, {
+      setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.html')) {
+          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+          res.setHeader('Pragma', 'no-cache');
+          res.setHeader('Expires', '0');
+        }
+      },
+    }));
+
+    // SPA fallback: always serve index.html with no-cache so newly published updates load immediately
     app.get('*', (req: Request, res: Response) => {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Ecentra Concierge server listening on http://0.0.0.0:${PORT}`);
+  // Primary port 3000 (standard for local dev and reverse proxy)
+  const primaryPort = 3000;
+  const primaryServer = app.listen(primaryPort, '0.0.0.0', () => {
+    console.log(`Ecentra Concierge server listening on http://0.0.0.0:${primaryPort}`);
   });
+  primaryServer.on('error', (err: any) => {
+    if (err.code === 'EADDRINUSE') {
+      console.warn(`[Port ${primaryPort}] Already in use. If running secondary port or behind proxy, this is handled.`);
+    } else {
+      console.error(`[Port ${primaryPort} Error]`, err);
+    }
+  });
+
+  // Cloud Run sets PORT (commonly 8080) for ingress and container health checks.
+  // If process.env.PORT is different from 3000, also bind to it so Cloud Run deployments
+  // and health checks succeed immediately without timing out.
+  let cloudRunServer: any = null;
+  const envPort = process.env.PORT ? parseInt(process.env.PORT, 10) : null;
+  if (envPort && envPort !== primaryPort && !isNaN(envPort)) {
+    try {
+      cloudRunServer = app.listen(envPort, '0.0.0.0', () => {
+        console.log(`Ecentra Concierge also listening on Cloud Run port http://0.0.0.0:${envPort}`);
+      });
+      cloudRunServer.on('error', (err: any) => {
+        // In local development container, port 8080 is used by Nginx; EADDRINUSE is safely ignored.
+        if (err.code !== 'EADDRINUSE') {
+          console.warn(`[Port ${envPort} warning]`, err.message);
+        }
+      });
+    } catch (e: any) {
+      // Ignored if port is occupied
+    }
+  }
+
+  // Graceful shutdown handling for container termination
+  const shutdown = () => {
+    console.log('Received termination signal, shutting down server...');
+    if (cloudRunServer) {
+      cloudRunServer.close(() => {});
+    }
+    primaryServer.close(() => {
+      process.exit(0);
+    });
+  };
+  process.on('SIGTERM', shutdown);
+  process.on('SIGINT', shutdown);
 }
 
 startServer();

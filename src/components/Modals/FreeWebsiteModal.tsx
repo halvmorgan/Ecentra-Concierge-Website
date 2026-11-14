@@ -85,19 +85,19 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
           <div>
             <div className="flex items-center gap-2 text-xs font-bold text-[#00E599] uppercase tracking-wider mb-1">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Foundational Starter Offer • AI Search Ready</span>
+              <span>ZeroDown Site • $0 Upfront Build • AI Search Ready</span>
             </div>
             <h3 className="font-heading text-2xl font-bold text-white">
-              Claim Your $0 Foundational Website Build
+              Claim Your ZeroDown Site ($0 Build + $97/mo Hosting)
             </h3>
             <p className="text-xs text-slate-300 mt-1 mb-4 leading-relaxed">
-              We handcraft a clean, speed-optimized starter website ($0 build fee) paired with our <strong>$97/month cloud hosting & maintenance plan</strong>—fully structured and optimized to capture search traffic from <strong>ChatGPT, Claude, Gemini, Perplexity, and Google</strong>.
+              We handcraft a clean, speed-optimized starter website ($0 upfront build fee) paired with our <strong>$97/month cloud hosting & maintenance plan</strong>—fully structured and optimized to capture search traffic from <strong>ChatGPT, Claude, Gemini, Perplexity, and Google</strong>.
             </p>
 
             {/* Scope disclosure pill */}
             <div className="p-3 rounded-xl bg-white/[0.03] border border-[#00E599]/30 mb-5 flex flex-wrap items-center justify-between gap-2 text-xs">
               <span className="text-slate-300">
-                <strong>Build Fee:</strong> <span className="text-[#00E599] font-bold">$0 Upfront</span>
+                <strong>ZeroDown Build:</strong> <span className="text-[#00E599] font-bold">$0 Upfront</span>
               </span>
               <span className="text-[#00E599] font-semibold flex items-center gap-1">
                 <Bot className="w-3.5 h-3.5" />
@@ -226,10 +226,10 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
                 className="w-full py-3.5 px-4 font-bold text-[#080E21] bg-[#00E599] hover:bg-[#34D399] rounded-xl shadow-lg font-heading text-base transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 {isSubmitting ? (
-                  <span>Reserving Your Starter Build...</span>
+                  <span>Reserving Your ZeroDown Site Build...</span>
                 ) : (
                   <>
-                    <span>Claim $0 Starter Build ($97/mo Hosting)</span>
+                    <span>Claim Your ZeroDown Site ($97/mo Hosting)</span>
                     <ArrowRight className="w-4 h-4" />
                   </>
                 )}
@@ -238,7 +238,7 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
 
             <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> $0 Upfront Build
+                <ShieldCheck className="w-3.5 h-3.5 text-[#00E599]" /> ZeroDown Site ($0 Build)
               </span>
               <span className="flex items-center gap-1">
                 <Bot className="w-3.5 h-3.5 text-[#00E599]" /> AI Search Indexed
@@ -261,7 +261,7 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
               Application Confirmed!
             </h3>
             <p className="text-xs text-slate-300 max-w-sm mx-auto">
-              Your $0 starter build with AI Search schema is in the queue for <strong className="text-white">{formData.businessName}</strong>.
+              Your ZeroDown Site build with AI Search schema is in the queue for <strong className="text-white">{formData.businessName}</strong>.
             </p>
 
             <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-left text-xs space-y-1.5 max-w-xs mx-auto">
@@ -271,7 +271,7 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">Build Fee:</span>
-                <span className="font-bold text-[#00E599]">$0 Upfront</span>
+                <span className="font-bold text-[#00E599]">$0 Upfront (ZeroDown Site)</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">AI Search Ready:</span>
@@ -287,12 +287,23 @@ export const FreeWebsiteModal: React.FC<FreeWebsiteModalProps> = ({
               </div>
             </div>
 
-            <button
-              onClick={onClose}
-              className="px-6 py-2.5 rounded-xl bg-[#00E599] text-[#080E21] font-bold text-xs font-heading cursor-pointer"
-            >
-              Done / Return to Site
-            </button>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+              <a
+                href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs font-heading flex items-center justify-center gap-1.5 transition-all"
+              >
+                <span>Jump to Front of Line (Book 15-Min Kick-Off)</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+              <button
+                onClick={onClose}
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs font-heading cursor-pointer transition-all"
+              >
+                Close
+              </button>
+            </div>
           </div>
         )}
       </div>

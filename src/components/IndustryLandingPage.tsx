@@ -365,13 +365,13 @@ export const IndustryLandingPage: React.FC<IndustryLandingPageProps> = ({
           {/* Product Tabs Switcher */}
           <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
             {[
-              { key: 'freeWebsite', label: 'Free Website ($0 + $97/mo)', icon: Globe },
-              { key: 'aiReceptionist', label: '24/7 AI Receptionist', icon: PhoneCall },
-              { key: 'aiChatbot', label: 'Smart AI Chatbot', icon: MessageSquareText },
-              { key: 'reviewAutomator', label: '5-Star Review Automator', icon: Star },
-              { key: 'appointmentSetter', label: '2-Way Appointment Setter', icon: CalendarCheck },
-              { key: 'interactiveFunnel', label: 'Interactive Lead Funnel', icon: Filter },
-              { key: 'aiEmployeeSuite', label: 'The "AI Employee" Suite', icon: Sparkles },
+              { key: 'freeWebsite', label: 'ZeroDown Site', icon: Globe },
+              { key: 'aiReceptionist', label: 'NeverMiss', icon: PhoneCall },
+              { key: 'aiChatbot', label: 'LeadCatch', icon: MessageSquareText },
+              { key: 'reviewAutomator', label: '5-Star Engine', icon: Star },
+              { key: 'appointmentSetter', label: 'BookedSolid', icon: CalendarCheck },
+              { key: 'interactiveFunnel', label: 'The Fast Track', icon: Filter },
+              { key: 'aiEmployeeSuite', label: 'The New Hire', icon: Sparkles },
             ].map((p) => {
               const isSelected = activeProductTab === p.key;
               const IconComp = p.icon;
@@ -568,13 +568,16 @@ export const IndustryLandingPage: React.FC<IndustryLandingPageProps> = ({
                     </div>
                   )}
 
-                  <button
+                  <a
+                    href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => onOpenBookCall(industry.name)}
                     className="w-full py-3.5 px-4 rounded-xl bg-[#00E599] hover:bg-[#34D399] text-[#080E21] font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer font-heading"
                   >
-                    <span>Schedule 15-Min Live Demo for {industry.shortName}</span>
+                    <span>Schedule 15-Min Strategy Call for {industry.shortName}</span>
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -683,7 +686,7 @@ export const IndustryLandingPage: React.FC<IndustryLandingPageProps> = ({
         </div>
       </section>
 
-      {/* SECTION 5: Interactive Funnel Scope Preview */}
+      {/* SECTION 5: The Fast Track Scope Preview */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -695,7 +698,7 @@ export const IndustryLandingPage: React.FC<IndustryLandingPageProps> = ({
               {industry.funnelPreview.title}
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-300">
-              Here is the exact 4-step interactive funnel embedded on your website to filter tire-kickers and capture high-budget clients.
+              Here is the exact 4-step Fast Track funnel embedded on your website to filter tire-kickers and capture high-budget clients.
             </p>
           </div>
 
@@ -729,7 +732,7 @@ export const IndustryLandingPage: React.FC<IndustryLandingPageProps> = ({
                 onClick={onOpenFreeWebsite}
                 className="px-4 py-2 rounded-lg bg-[#00E599] text-[#080E21] font-bold text-xs hover:bg-[#34D399] transition-all cursor-pointer font-heading"
               >
-                Include in My Free Website
+                Include in My ZeroDown Site
               </button>
             </div>
           </div>
@@ -812,11 +815,11 @@ export const IndustryLandingPage: React.FC<IndustryLandingPageProps> = ({
           </div>
 
           <h2 className="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight max-w-3xl mx-auto leading-tight">
-            Claim Your $0 {industry.shortName} Website & Pre-Trained AI Receptionist
+            Claim Your $0 {industry.shortName} ZeroDown Site & NeverMiss Answering
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
-            Zero upfront design fees. Zero long-term contracts. We handcraft your high-speed website and pre-train your 24/7 AI answering engine in 2–3 business days.
+            Zero upfront design fees. Zero long-term contracts. We handcraft your high-speed ZeroDown Site and pre-train your NeverMiss 24/7 answering engine in 2–3 business days.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -824,16 +827,19 @@ export const IndustryLandingPage: React.FC<IndustryLandingPageProps> = ({
               onClick={onOpenFreeWebsite}
               className="px-8 py-4 text-base font-bold text-[#080E21] bg-[#00E599] hover:bg-[#34D399] rounded-xl shadow-xl shadow-[#00E599]/25 transition-all flex items-center gap-2 cursor-pointer font-heading hover:scale-105 active:scale-95"
             >
-              <span>Claim Free {industry.shortName} Website ($0)</span>
+              <span>Claim ZeroDown {industry.shortName} Site ($0 Build)</span>
               <ArrowRight className="w-5 h-5" />
             </button>
 
-            <button
+            <a
+              href="https://api.leadconnectorhq.com/widget/booking/Qx4oGb9Y7b4RFlDyVpJf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => onOpenBookCall(industry.name)}
-              className="px-7 py-4 text-base font-semibold text-slate-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-xl transition-all cursor-pointer font-heading"
+              className="px-7 py-4 text-base font-semibold text-slate-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-xl transition-all cursor-pointer font-heading flex items-center gap-2"
             >
-              Book 15-Minute Strategy Call
-            </button>
+              Schedule 15-Min Strategy Call
+            </a>
           </div>
         </div>
       </section>
